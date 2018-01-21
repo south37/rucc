@@ -9,8 +9,7 @@ module Rucc
       def read_continue_stmt(tok)
         expect!(';')
         if (!@lcontinue)
-          raise "stray continue statement"
-          # errort(tok, "stray continue statement")
+          Util.errort!(tok, "stray continue statement")
         end
         Node.ast_jump(@lcontinue)
       end

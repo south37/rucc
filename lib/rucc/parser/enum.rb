@@ -15,14 +15,12 @@ module Rucc
         if tag
           ty = @tags[tag]
           if ty && ty.kind != Kind::ENUM
-            raise "declarations of #{tag} does not match"
-            # errort(tok, "declarations of %s does not match", tag);
+            Util.errort!(tok, "declarations of #{tag} does not match")
           end
         end
         if !Token.is_keyword?(tok, '{')
           if !tag || !@tags[tag]
-            raise "enum tag #{tag} is not defined"
-            # errort(tok, "enum tag %s is not defined", tag);
+            Util.errort!(tok, "enum tag #{tag} is not defined")
           end
           @lexer.unget_token(tok)
           return Type::INT
@@ -56,8 +54,7 @@ module Rucc
           if next_token?('}')
             break
           end
-          raise "',' or '}' expected, but got #{peek}"
-          # errort(peek(), "',' or '}' expected, but got %s", tok2s(peek()));
+          Util.errort!(peek(), "',' or '}' expected, but got #{peek}")
         end
 
         Type::INT

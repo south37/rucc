@@ -9,8 +9,7 @@ module Rucc
       def read_label(tok)
         label = tok.sval
         if @labels[label]
-          raise "duplicate label: #{tok}"
-          # errort(tok, "duplicate label: %s", tok2s(tok));
+          Util.errort!(tok, "duplicate label: #{tok}")
         end
         r = Node.ast_label(label)
         @labels[label] = r

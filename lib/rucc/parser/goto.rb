@@ -11,15 +11,13 @@ module Rucc
           tok = peek
           expr = read_cast_expr
           if expr.ty.kind != Kind::PTR
-            raise "pointer expected for computed goto, but got #{expr}"
-            # errort(tok, "pointer expected for computed goto, but got %s", node2s(expr));
+            Util.errort!(tok, "pointer expected for computed goto, but got #{expr}")
           end
           return Node.ast_computed_goto(expr)
         end
         tok = get
         if !tok || (tok.kind != T::IDENT)
-          raise "identifier expected, but got #{tok}"
-          # errort(tok, "identifier expected, but got %s", tok2s(tok))
+          Util.errort!(tok, "identifier expected, but got #{tok}")
         end
         expect!(';')
         r = Node.ast_goto(tok.sval)

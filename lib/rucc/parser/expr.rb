@@ -7,9 +7,7 @@ module Rucc
         tok = peek
         r = read_comma_expr
         if r.nil?
-          raise "#{tok}: expression expected"
-          # TODO(south37) Impl errort when necessary
-          # errort(tok, "expression expected");
+          Util.errort!(tok, "expression expected")
         end
         r
       end
@@ -287,8 +285,7 @@ module Rucc
         operand = read_cast_expr
         operand = Node.conv(operand)
         if !Type.is_inttype(operand.ty)
-          raise "invalid use of ~: #{operand}"
-          # errort(tok, "invalid use of ~: %s", node2s(expr));
+          Util.errort!(tok, "invalid use of ~: #{expr}")
         end
         Node.ast_uop('~', operand.ty, operand)
       end
@@ -317,9 +314,7 @@ module Rucc
             node = Node.conv(node)
             t = node.ty
             if (t.kind != Kind::PTR) || (t.ptr.kind != Kind::FUNC)
-              raise "function expected, but got #{node}"
-              # TODO(south37) Impl errot when necessary
-              # errort(tok, "function expected, but got %s", node2s(node));
+              Util.errort!(tok, "function expected, but got #{node}")
             end
             node = read_funcall(node)
             next
@@ -362,8 +357,7 @@ module Rucc
         tok = peek
         sub = read_expr
         if !sub
-          raise "#{tok}: subscription expected"
-          # errort(tok, "subscription expected")
+          Util.errort!(tok, "subscription expected")
         end
         expect!(']')
         t = Node.binop('+', Node.conv(node), Node.conv(sub))
@@ -427,8 +421,7 @@ module Rucc
         # with unary "&&" operator followed by a label name.
         tok2 = get
         if tok2.kind != T::IDENT
-          raise "label name expected after &&, but got #{tok2}"
-          # errort(tok, "label name expected after &&, but got %s", tok2s(tok2));
+          Util.errort!(tok, "label name expected after &&, but got #{tok2}")
         end
         r = Node.ast_label_addr(tok2.sval)
         @gotos.push(r)
@@ -450,9 +443,7 @@ module Rucc
       def read_unary_deref(tok)
         operand = Node.conv(read_cast_expr)
         if operand.ty.kind != Kind::PTR
-          raise "pointer type expected, but got #{operand}"
-          # TODO(south37) Impl errot when necessary
-          # errort(tok, "pointer type expected, but got %s", node2s(operand));
+          Util.errort!(tok, "pointer type expected, but got #{operand}")
         end
         if operand.ty.ptr.kind == Kind::FUNC
           return operand

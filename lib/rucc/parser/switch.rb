@@ -66,8 +66,7 @@ module Rucc
       # @return [Node]
       def read_case_label(tok)
         if !@cases
-          raise "stray case label"
-          # errort(tok, "stray case label");
+          Util.errort!(tok, "stray case label")
         end
         label = @label_gen.next
         b = read_intexpr
@@ -75,8 +74,7 @@ module Rucc
           e = read_intexpr
           expect!(':')
           if b > e
-            raise "case region is not in correct order: #{b} ... #{e}"
-            # errort(tok, "case region is not in correct order: %d ... %d", b, e);
+            Util.errort!(tok, "case region is not in correct order: #{b} ... #{e}")
           end
           @cases.push(Case.make_case(b, e, label))
         else
@@ -109,8 +107,7 @@ module Rucc
       def read_default_label(tok)
         expect!(':');
         if @defaultcase
-          raise "duplicate default"
-          # errort(tok, "duplicate default");
+          Util.errort!(tok, "duplicate default")
         end
         @defaultcase = @label_gen.next
         read_label_tail(Node.ast_dest(@defaultcase))

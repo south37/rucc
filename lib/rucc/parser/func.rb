@@ -39,9 +39,7 @@ module Rucc
 
         tok2 = peek
         if next_token?(K::ELLIPSIS)
-          raise "#{tok2}: at least one parameter is required before \"...\""
-          # TODO(south37) Impl errort when necessary
-          # errort(tok2, "at least one parameter is required before \"...\"");
+          Util.errort!(tok2, "at least one parameter is required before \"...\"")
         end
 
         if is_type?(peek)
@@ -51,9 +49,7 @@ module Rucc
         end
 
         if paramvars.nil?
-          raise "invalid function definition"
-          # TODO(south37) Impl errot when necessary
-          # errort(tok, "invalid function definition");
+          Util.errort!(tok, "invalid function definition")
         end
 
         read_declarator_params_oldstyle(paramvars)
@@ -74,9 +70,7 @@ module Rucc
           tok = peek
           if next_token?(K::ELLIPSIS)
             if types.size == 0
-              raise "at least one parameter is required before \"...\""
-              # TODO(south37) Impl errot when necessary
-              # errort(tok, "at least one parameter is required before \"...\"");
+              Util.errort!(tok, "at least one parameter is required before \"...\"")
             end
             expect!(')')
             ellipsis = true
@@ -96,9 +90,7 @@ module Rucc
             return ellipsis
           end
           if !Token.is_keyword?(tok, ',')
-            raise "comma expected, but got #{tok}"
-            # TODO(south37) Impl errot when necessary
-            # errort(tok, "comma expected, but got %s", tok2s(tok));
+            Util.errort!(tok, "comma expected, but got #{tok}")
           end
         end
         raise "must not reach here"
@@ -112,9 +104,7 @@ module Rucc
         if is_type?(peek)
           basety, _ = read_decl_spec
         elsif optional
-          raise "type expected, but got #{peek}"
-          # TODO(south37) Impl errort when necessary
-          # errort(peek(), "type expected, but got %s", tok2s(peek()));
+          Util.errort!(peek, "type expected, but got #{peek}")
         end
         ty = read_declarator(name, basety, nil, optional ? DECL::PARAM_TYPEONLY : DECL::PARAM)
         # C11 6.7.6.3p7: Array of T is adjusted to pointer to T
@@ -137,16 +127,14 @@ module Rucc
         while true
           tok = get
           if tok.kind != T::IDENT
-            raise "identifier expected, but got #{tok}"
-            # errort(tok, "identifier expected, but got %s", tok2s(tok));
+            Util.errort!(tok, "identifier expected, but got #{tok}")
           end
           vars.push(Node.ast_lvar(Type::INT, tok.sval, @localenv, @localvars))
           if next_token?(')')
             return
           end
           if !next_token?(',')
-            raise "comma expected, but got #{get}"
-            # errort(tok, "comma expected, but got %s", tok2s(get()));
+            Util.errort!(tok, "comma expected, but got #{get}")
           end
         end
       end
@@ -208,9 +196,7 @@ module Rucc
             break
           end
           if !is_type?(peek)
-            raise "K&R-style declarator expected, but got #{peek}"
-            # TODO(south37) Impl errort when necessary
-            # errort(peek(), "K&R-style declarator expected, but got %s", tok2s(peek()));
+            Util.errort!(peek, "K&R-style declarator expected, but got #{peek}")
           end
           read_decl(r, false)
         end

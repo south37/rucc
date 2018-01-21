@@ -17,8 +17,7 @@ module Rucc
           when "disable_warning"
             @enable_warning = false
           else
-            raise "unknown #pragma: #{s}"
-            # errort(tok, "unknown #pragma: %s", s);
+            Util.errort!(tok, "unknown #pragma: #{s}")
           end
         end
 

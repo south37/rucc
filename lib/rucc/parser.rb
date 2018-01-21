@@ -155,14 +155,12 @@ module Rucc
       expect!(',')
       tok = get
       if tok.kind != T::STRING
-        raise "string expected as the second argument for _Static_assert, but got #{tok}"
-        # errort(tok, "string expected as the second argument for _Static_assert, but got %s", tok2s(tok));
+        Util.errort!(tok, "string expected as the second argument for _Static_assert, but got #{tok}")
       end
       expect!(')')
       expect!(';')
       if (!val)
-        raise "_Static_assert failure: #{tok.sval}"
-        # errort(tok, "_Static_assert failure: %s", tok->sval);
+        Util.errort!(tok, "_Static_assert failure: #{tok.sval}")
       end
     end
 
@@ -412,9 +410,7 @@ module Rucc
       if v.nil?
         tok = peek
         if !Token.is_keyword?(tok, '(')
-          raise "undefined variable: #{name}"
-          # TODO(south37) Impl errot when necessary
-          # errort(tok, "undefined variable: %s", name);
+          Util.errort!(tok, "undefined variable: #{name}")
         end
         ty = Type.make_func_type(Type::INT, [], true, false)
         # TODO(south37) Impl want when necessary
@@ -524,14 +520,14 @@ module Rucc
       tok = get
       if tok.kind == T::IDENT
         if ctx == DECL::CAST
-          Util.errort!(tok, "identifier is not expected, but got %s", tok2s(tok));
+          Util.errort!(tok, "identifier is not expected, but got #{tok}")
         end
         rname << tok.sval  # Write as return value
         return read_declarator_tail(basety, params)
       end
 
       if [DECL::BODY, DECL::PARAM].include?(ctx)
-        Util.errort!(tok, "identifier, ( or * are expected, but got %s", tok2s(tok));
+        Util.errort!(tok, "identifier, ( or * are expected, but got #{tok}")
       end
       @lexer.unget_token(tok)
       read_declarator_tail(basety, params)
@@ -569,7 +565,7 @@ module Rucc
 
     # @raise [RuntimeError]
     def read_decl_spec_error!(tok)
-      Util.errort!(tok, "type name expected, but got %s", tok2s(tok));
+      Util.errort!(tok, "type name expected, but got #{tok}")
     end
 
     # @return [<Type, S>]
@@ -657,7 +653,7 @@ module Rucc
         when K::ALIGNAS
           val = read_alignas
           if val < 0
-            Util.errort!(tok, "negative alignment: %d", val);
+            Util.errort!(tok, "negative alignment: #{val}")
           end
 
           if val == 0
@@ -695,7 +691,7 @@ module Rucc
         return usertype, sclass
       end
       if (align != -1) && !is_peweroftwo?(align)
-        Util.errort!(tok, "alignment must be power of 2, but got %d", align);
+        Util.errort!(tok, "alignment must be power of 2, but got #{align}")
       end
 
       ty = nil
@@ -756,9 +752,7 @@ module Rucc
       tok = peek
       t = read_declarator_tail(basety, nil)
       if t.kind == Kind::FUNC
-        raise "#{tok}: array of functions"
-        # TODO(south37) Impl errot when necessary
-        # errort(tok, "array of functions");
+        Util.errort!(tok, "array of functions")
       end
       Type.make_array_type(t, len)
     end
@@ -891,9 +885,7 @@ module Rucc
         b << tok2.sval
         enc2 = tok2.enc
         if (enc != ENC::NONE) && (enc2 != ENC::NONE) && (enc != enc2)
-          raise "unsupported non-standard concatenation of string literals: #{tok2}"
-          # TODO(south37) Impl errort
-          # errort(tok2, "unsupported non-standard concatenation of string literals: %s", tok2s(tok2));
+          Util.errort!(tok2, "unsupported non-standard concatenation of string literals: #{tok2}")
         end
         if enc == ENC::NONE
           enc = enc2
@@ -960,9 +952,7 @@ module Rucc
     def expect!(id)
       tok = get
       if !Token.is_keyword?(tok, id)
-        raise "'#{id}' expected, but got #{tok}"
-        # TODO(south37) Impl errort when necessary
-        # errort(tok, "'%c' expected, but got %s", id, tok2s(tok));
+        Util.errort!(tok, "'#{id}' expected, but got #{tok}")
       end
     end
   end

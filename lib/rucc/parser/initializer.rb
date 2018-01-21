@@ -85,9 +85,7 @@ module Rucc
             tok = peek
             idx = read_intexpr
             if (idx < 0) || (!flexible && ty.len <= idx)
-              raise "array designator exceeds array bounds: #{idx}"
-              # TODO(south37) Impl errot when necessary
-              # errort(tok, "array designator exceeds array bounds: %d", idx);
+              Util.errort!(tok, "array designator exceeds array bounds: #{idx}")
             end
             i = idx
             expect!(']')
@@ -148,14 +146,12 @@ module Rucc
           if Token.is_keyword?(tok, '.')
             tok = get
             if !tok || (tok.kind != T::IDENT)
-              raise "malformed desginated initializer: #{tok}"
-              # errort(tok, "malformed desginated initializer: %s", tok2s(tok));
+              Util.errort!(tok, "malformed desginated initializer: #{tok}")
             end
             fieldname = tok.sval
             fieldtype = ty.fields[fieldname]
             if !fieldtype
-              raise "field does not exist: #{tok}"
-              # errort(tok, "field does not exist: %s", tok2s(tok));
+              Util.errort!(tok, "field does not exist: #{tok}")
             end
             keys = ty.fields.keys
             i = 0

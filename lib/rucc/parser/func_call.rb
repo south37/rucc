@@ -44,9 +44,7 @@ module Rucc
           tok = get
           break if Token.is_keyword?(tok, ')')
           if !Token.is_keyword?(tok, ',')
-            raise "unexpected token: '#{tok}'"
-            # TODO(south37) Impl errort when necessary
-            # errort(tok, "unexpected token: '%s'", tok2s(tok));
+            Util.errort(tok, "unexpected token: '#{tok}'")
           end
         end
         args

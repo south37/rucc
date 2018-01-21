@@ -12,8 +12,7 @@ module Rucc
         with_jump_labels(b, e) { body = read_stmt }
         tok = get
         if !Token.is_keyword?(tok, K::WHILE)
-          raise "'while' is expected, but got #{tok}"
-          # errort(tok, "'while' is expected, but got %s", tok2s(tok));
+          Util.errort!(tok, "'while' is expected, but got #{tok}")
         end
         expect!('(')
         cond = read_boolean_expr

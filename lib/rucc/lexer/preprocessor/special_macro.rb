@@ -65,8 +65,7 @@ module Rucc
           expect!('(')
           operand = read_token
           if operand.kind != T::STRING
-            raise "_Pragma takes a string literal, but got #{operand}"
-            # errort(operand, "_Pragma takes a string literal, but got %s", tok2s(operand));
+            Util.errort!(operand, "_Pragma takes a string literal, but got #{operand}")
           end
           expect!(')')
           parse_pragma_operand(operand)

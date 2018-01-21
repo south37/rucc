@@ -256,14 +256,10 @@ module Rucc
         r = read_intexpr
         maxsize = ty.kind == Kind::BOOL ? 1 : ty.size * 8
         if (r < 0) || (maxsize < r)
-          raise "#{tok}: invalid bitfield size for #{ty}: #{r}"
-          # TODO(south37) Impl errort when necessary
-          # errort(tok, "invalid bitfield size for %s: %d", ty2s(ty), r);
+          Util.errort!(tok, "invalid bitfield size for #{ty}: #{r}")
         end
         if (r == 0) && name != ""
-          raise "#{tok}: zero-width bitfield needs to be unnamed: #{name}"
-          # TODO(south37) Impl errort when necessary
-          # errort(tok, "zero-width bitfield needs to be unnamed: %s", name);
+          Util.errort(tok, "zero-width bitfield needs to be unnamed: #{name}")
         end
         r
       end

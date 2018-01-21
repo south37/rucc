@@ -177,14 +177,12 @@ module Rucc
       # @param [Token] tok
       def read_linemarker(tok)
         if !is_digit_sequence?(tok.sval)
-          raise "line number expected, but got #{tok}"
-          # errort(tok, "line number expected, but got %s", tok2s(tok));
+          Util.errort!(tok, "line number expected, but got #{tok}")
         end
         line = tok.sval.to_i
         tok = @impl.lex
         if tok.kind != T::STRING
-          raise "filename expected, but got #{tok}"
-          # errort(tok, "filename expected, but got %s", tok2s(tok));
+          Util.errort!(tok, "filename expected, but got #{tok}")
         end
         filename = tok.sval
 
@@ -209,8 +207,7 @@ module Rucc
         end
         args = do_read_args(tok, macro)
         if args.size != macro.nargs
-          raise "macro argument number does not match"
-          # errort(tok, "macro argument number does not match");
+          Util.errort!(tok, "macro argument number does not match");
         end
         args
       end
@@ -241,8 +238,7 @@ module Rucc
         while true
           tok = @impl.lex
           if tok.kind == T::EOF
-            raise "unterminated macro argument list"
-            # errort(ident, "unterminated macro argument list")
+            Util.errort!(ident, "unterminated macro argument list")
           end
           if tok.kind == T::NEWLINE
             next
@@ -449,8 +445,7 @@ module Rucc
           if try_include("/", filename, isimport)
             return
           end
-          raise "cannot find header file: #{filename}"
-          # errort(hash, "cannot find header file: %s", filename);
+          Util.errort!(hash, "cannot find header file: #{filename}")
         end
         if !std
           dir = file.name ? File.dirname(file.name) : "."
@@ -463,8 +458,7 @@ module Rucc
             return
           end
         end
-        raise "cannot find header file: #{filename}"
-        # errort(hash, "cannot find header file: %s", filename);
+        Util.errort!(hash, "cannot find header file: #{filename}")
       end
 
       # @raise [RuntimeError]
@@ -489,23 +483,20 @@ module Rucc
         # form may be a valid header file path.
         tok = read_expand_newline
         if tok.kind == T::NEWLINE
-          # errort(hash, "expected filename, but got newline");
-          raise "expected filename, but got newline"
+          Util.errort!(hash, "expected filename, but got newline")
         end
         if tok.kind == T::STRING
           std = false
           return tok.sval, std
         end
         if !Token.is_keyword?(tok, '<')
-          raise "< expected, but got #{tok}"
-          # errort(tok, "< expected, but got %s", tok2s(tok));
+          Util.errort!(tok, "< expected, but got #{tok}")
         end
         tokens = []
         while true
           tok = read_expand_newline
           if tok.kind == T::NEWLINE
-            raise "premature end of header name"
-            # errort(hash, "premature end of header name");
+            Util.errort!(hash, "premature end of header name")
           end
           if Token.is_keyword?(tok, '>')
             break
@@ -559,8 +550,7 @@ module Rucc
       def read_line
         tok = read_expand_newline
         if (tok.kind != T::NUMBER) || !is_digit_sequence?(tok.sval)
-          raise "number expected after #line, but got #{tok}"
-          # errort(tok, "number expected after #line, but got %s", tok2s(tok));
+          Util.errort!(tok, "number expected after #line, but got #{tok}")
         end
         line = tok.sval.to_i
         tok = read_expand_newline
@@ -568,8 +558,7 @@ module Rucc
           filename = tok.sval
           expect_newline!
         elsif tok.kind != T::NEWLINE
-          raise "newline or a source name are expected, but got #{tok}"
-          # errort(tok, "newline or a source name are expected, but got %s", tok2s(tok));
+          Util.errort!(tok, "newline or a source name are expected, but got #{tok}")
         end
         f = @impl.current_file
         f.line = line
@@ -595,8 +584,7 @@ module Rucc
         expr = @expr_reader.call
         tok = @impl.lex
         if tok.kind != T::EOF
-          raise "stray token: #{tok}"
-          # errort(tok, "stray token: %s", tok2s(tok));
+          Util.errort!(tok, "stray token: #{tok}")
         end
         @impl.token_buffer_unstash
         n, _ = IntEvaluator.eval(expr)
@@ -606,8 +594,7 @@ module Rucc
       def read_ifdef
         tok = @impl.lex
         if tok.kind != T::IDENT
-          raise "identifier expected, but got #{tok}"
-          # errort(tok, "identifier expected, but got %s", tok2s(tok));
+          Util.errort!(tok, "identifier expected, but got #{tok}")
         end
         do_read_if(@macros[tok.sval])
       end
@@ -615,8 +602,7 @@ module Rucc
       def read_ifndef
         tok = @impl.lex
         if tok.kind != T::IDENT
-          raise "identifier expected, but got #{tok}"
-          # errort(tok, "identifier expected, but got %s", tok2s(tok));
+          Util.errort!(tok, "identifier expected, but got #{tok}")
         end
         expect_newline!
         do_read_if(!@macros[tok.sval])
@@ -671,14 +657,12 @@ module Rucc
           end
           if pos > 0
             if !Token.is_keyword?(tok, ',')
-              raise ", expected, but got #{tok}"
-              # errort(tok, ", expected, but got %s", tok2s(tok));
+              Util.errort!(tok, ", expected, but got #{tok}")
             end
             tok = @impl.lex
           end
           if tok.kind == T::NEWLINE
-            raise "missing ')' in macro parameter list"
-            # errort(name, "missing ')' in macro parameter list")
+            Util.errort!(name, "missing ')' in macro parameter list")
           end
           if Token.is_keyword?(tok, K::ELLIPSIS)
             param["__VA_ARGS__"] = make_macro_token(pos, true)
@@ -687,8 +671,7 @@ module Rucc
             return param, true
           end
           if tok.kind != T::IDENT
-            raise "identifier expected, but got #{tok}"
-            # errort(tok, "identifier expected, but got %s", tok2s(tok));
+            Util.errort!(tok, "identifier expected, but got #{tok}")
           end
           arg = tok.sval
           if next?(K::ELLIPSIS)
@@ -745,12 +728,10 @@ module Rucc
           return
         end
         if Token.is_keyword?(v.first, K::HASHHASH)
-          raise "'##' cannot appear at start of macro expansion"
-          # errort(vec_head(v), "'##' cannot appear at start of macro expansion")
+          Util.errort!(vec_head(v), "'##' cannot appear at start of macro expansion")
         end
         if Token.is_keyword?(v.last, K::HASHHASH)
-          raise "'##' cannot appear at end of macro expansion"
-          # errort(vec_tail(v), "'##' cannot appear at end of macro expansion");
+          Util.errort!(vec_tail(v), "'##' cannot appear at end of macro expansion")
         end
       end
 
@@ -758,8 +739,7 @@ module Rucc
       def read_ident
         tok = @impl.lex
         if tok.kind != T::IDENT
-          raise "identifier expected, but got #{tok}"
-          # errort(tok, "identifier expected, but got %s", tok2s(tok))a
+          Util.errort!(tok, "identifier expected, but got #{tok}")
         end
         tok
       end
@@ -792,8 +772,7 @@ module Rucc
           expect!(')')
         end
         if tok.kind != T::IDENT
-          raise "identifier expected, but got #{tok}"
-          # errort(tok, "identifier expected, but got %s", tok2s(tok));
+          Util.errort!(tok, "identifier expected, but got #{tok}")
         end
         @macros[tok.sval] ? CPP_TOKEN_ONE : CPP_TOKEN_ZERO
       end
@@ -801,13 +780,11 @@ module Rucc
       # @param [Token] hash
       def read_elif(hash)
         if @cond_incl_stack.size == 0
-          raise "stray #elif"
-          # errort(hash, "stray #elif");
+          Util.errort!(hash, "stray #elif")
         end
         ci = @cond_incl_stack.last
         if ci.ctx == CondInclCtx::ELSE
-          raise "#elif after #else"
-          # errort(hash, "#elif after #else");
+          Util.errort!(hash, "#elif after #else")
         end
         ci.ctx = CondInclCtx::ELIF
         ci.include_guard = nil
@@ -821,13 +798,11 @@ module Rucc
       # @param [Token] hash
       def read_else(hash)
         if @cond_incl_stack.size == 0
-          raise "stray #else"
-          # errort(hash, "stray #else");
+          Util.errort!(hash, "stray #else")
         end
         ci = @cond_incl_stack.last
         if ci.ctx == CondInclCtx::ELSE
-          raise "#else appears in #else"
-          # errort(hash, "#else appears in #else");
+          Util.errort!(hash, "#else appears in #else")
         end
         expect_newline!
         ci.ctx = CondInclCtx::ELSE
@@ -840,8 +815,7 @@ module Rucc
       # @param [Token] hash
       def read_endif(hash)
         if @cond_incl_stack.size == 0
-          raise "stray #endif"
-          # errort(hash, "stray #endif");
+          Util.errort!(hash, "stray #endif")
         end
         ci = @cond_incl_stack.pop
         expect_newline!
@@ -872,8 +846,7 @@ module Rucc
 
       # @param [Token] hash
       def read_error(hash)
-        raise "#error: #{read_error_message}"
-        # errort(hash, "#error: %s", read_error_message());
+        Util.errort!(hash, "#error: #{read_error_message}")
       end
 
       # @param [Token] hash
