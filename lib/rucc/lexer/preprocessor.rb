@@ -93,8 +93,9 @@ module Rucc
 
         case macro.kind
         when M::OBJ
-          tok.hideset << name
-          tokens = subst(macro, nil, tok.hideset)
+          hideset = tok.hideset.dup
+          hideset << name
+          tokens = subst(macro, nil, hideset)
           propagate_space(tokens, tok)
           @impl.unget_all(tokens)
           return read_expand

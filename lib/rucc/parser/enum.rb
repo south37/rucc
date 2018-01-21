@@ -40,8 +40,7 @@ module Rucc
             break
           end
           if tok.kind != T::IDENT
-            raise "identifier expected, but got #{tok}"
-            # errort(tok, "identifier expected, but got %s", tok2s(tok));
+            Util.errort!(tok, "identifier expected, but got #{tok}")
           end
           name = tok.sval
 

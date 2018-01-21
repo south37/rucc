@@ -39,8 +39,8 @@ module Rucc
       @sval = sval;           @c = c; @enc = enc;   # STRING or CHAR
       @is_vararg = is_vararg; @position = position  # MACRO_PARAM
     end
-    attr_reader :kind, :id, :sval, :c, :enc, :space, :hideset, :file, :count,          :bol, :is_vararg, :position
-    attr_writer :kind, :id, :sval,     :enc, :space, :hideset,                :column, :bol
+    attr_reader :kind, :id, :sval, :c, :enc, :space, :hideset, :file, :count, :line, :column, :bol, :is_vararg, :position
+    attr_writer :kind, :id, :sval,     :enc, :space, :hideset,                :line, :column, :bol
 
     # @return [String]
     def to_s

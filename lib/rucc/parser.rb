@@ -144,9 +144,7 @@ module Rucc
           return
         end
         if !next_token?(',')
-          raise "';' or ',' are expected, but got #{peek}"
-          # TODO(south37) Impl errot when necessary
-          # errort(peek(), "';' or ',' are expected, but got %s", tok2s(peek()));
+          Util.errort!(peek, "';' or ',' are expected, but got #{peek}")
         end
       end
     end
@@ -526,18 +524,14 @@ module Rucc
       tok = get
       if tok.kind == T::IDENT
         if ctx == DECL::CAST
-          raise "identifier is not expected, but got #{tok}"
-          # TODO(south37) Impl errort when necessary
-          # errort(tok, "identifier is not expected, but got %s", tok2s(tok));
+          Util.errort!(tok, "identifier is not expected, but got %s", tok2s(tok));
         end
         rname << tok.sval  # Write as return value
         return read_declarator_tail(basety, params)
       end
 
       if [DECL::BODY, DECL::PARAM].include?(ctx)
-        raise "identifier, ( or * are expected, but got #{tok}"
-        # TODO(south37) Impl errot when necessary
-        # errort(tok, "identifier, ( or * are expected, but got %s", tok2s(tok));
+        Util.errort!(tok, "identifier, ( or * are expected, but got %s", tok2s(tok));
       end
       @lexer.unget_token(tok)
       read_declarator_tail(basety, params)
@@ -575,9 +569,7 @@ module Rucc
 
     # @raise [RuntimeError]
     def read_decl_spec_error!(tok)
-      raise "type name expected, but got #{tok}"
-      # TODO(south37) Impl errot when necessary
-      # errort(tok, "type name expected, but got %s", tok2s(tok));
+      Util.errort!(tok, "type name expected, but got %s", tok2s(tok));
     end
 
     # @return [<Type, S>]
@@ -665,9 +657,7 @@ module Rucc
         when K::ALIGNAS
           val = read_alignas
           if val < 0
-            raise "negative alignment: #{val}"
-            # TODO(south37) Impl errort when necessary
-            # errort(tok, "negative alignment: %d", val);
+            Util.errort!(tok, "negative alignment: %d", val);
           end
 
           if val == 0
@@ -705,9 +695,7 @@ module Rucc
         return usertype, sclass
       end
       if (align != -1) && !is_peweroftwo?(align)
-        raise "alignment must be power of 2, but got #{align}"
-        # TODO(south37) Impl errot when necessary
-        # errort(tok, "alignment must be power of 2, but got %d", align);
+        Util.errort!(tok, "alignment must be power of 2, but got %d", align);
       end
 
       ty = nil
@@ -933,7 +921,7 @@ module Rucc
     # @param [String] kind
     # @return [Boolean]
     def next_token?(kind)
-      tok = get
+      tok = get_internal
       if Token.is_keyword?(tok, kind)
         return true
       end
@@ -941,13 +929,21 @@ module Rucc
       return false
     end
 
+    # Consume and print for debug
+    #
     # @return [Token]
     def get
+      tok = get_internal
+      # NOTE: Only for debug
+      # print "#{tok} #{tok.file&.name || "(unknown)"} #{tok.line} #{tok.column}\n"
+      tok
+    end
+
+    # @return [Token]
+    def get_internal
       r = @lexer.read_token
       if r.kind == T::INVALID
-        raise "stray character in program: '#{r.c}'"
-        # TODO(south37) Impl when necessary
-        # errort(r, "stray character in program: '%c'", r->c);
+        Util.errort!(r, "stray character in program: '#{r.c}'")
       end
       if r.kind == T::STRING && peek.kind == T::STRING
         concatenate_string(r)

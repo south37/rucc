@@ -1,6 +1,10 @@
 module Rucc
   module Util
     class << self
+      ##
+      # Quote
+      ##
+
       # @param [Char] c
       # @return [char, NilClass] nil when c is not escapetable
       def quote(c)
@@ -66,6 +70,36 @@ module Rucc
         rem = n % 8
         (rem == 0) ? n : (n - rem + 8)
       end
+
+      ##
+      # Error
+      ##
+
+      # @param [Token] tok
+      # @param [String] message
+      # @raise [RuntimeError]
+      def errort!(tok, message)
+        raise_error(token_pos(tok), "ERROR", message)
+      end
+
+      # @param [Token] tok
+      # @return [String]
+      def token_pos(tok)
+        f = tok.file
+        if (f)
+          return "(unknown)"
+        end
+        name = f.name || "(unknown)"
+        "#{name}:#{tok.line}:#{tok.column}"
+      end
+
+      def raise_error(pos, label, message)
+        raise "[#{label}] #{pos}: #{message}"
+      end
+
+      ##
+      # Assert
+      ##
 
       class AssertError < RuntimeError; end
 
