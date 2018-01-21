@@ -74,7 +74,10 @@ module Rucc
       def read_expand
         while true
           tok = read_expand_newline
-          return tok if tok.kind != T::NEWLINE
+          if tok.kind != T::NEWLINE
+            tok.expanded = true
+            return tok
+          end
         end
       end
 
@@ -82,6 +85,11 @@ module Rucc
       # @return [Token]
       def read_expand_newline
         tok = @impl.lex
+        # NOTE: return tok if already expanded
+        if tok.expanded
+          return tok
+        end
+
         if tok.kind != T::IDENT
           return tok
         end

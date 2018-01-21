@@ -86,7 +86,7 @@ module Rucc
       # @return [String]
       def token_pos(tok)
         f = tok.file
-        if (f)
+        if !f
           return "(unknown)"
         end
         name = f.name || "(unknown)"

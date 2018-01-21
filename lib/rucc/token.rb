@@ -38,9 +38,12 @@ module Rucc
       @id = id                                      # KEYWORD
       @sval = sval;           @c = c; @enc = enc;   # STRING or CHAR
       @is_vararg = is_vararg; @position = position  # MACRO_PARAM
+
+      # Flag representing completion of macro expansion
+      @expanded = false
     end
-    attr_reader :kind, :id, :sval, :c, :enc, :space, :hideset, :file, :count, :line, :column, :bol, :is_vararg, :position
-    attr_writer :kind, :id, :sval,     :enc, :space, :hideset,                :line, :column, :bol
+    attr_reader :kind, :id, :sval, :c, :enc, :space, :hideset, :file, :count, :line, :column, :bol, :is_vararg, :position, :expanded
+    attr_writer :kind, :id, :sval,     :enc, :space, :hideset,                :line, :column, :bol,                        :expanded
 
     # @return [String]
     def to_s
