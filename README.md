@@ -41,6 +41,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 - [ ] Refactor
 - [ ] Add some CLI options
   - [ ] Integrate with assembler
+- [ ] Impl some features
+  - [ ] Support parentheses around function name
 
 ## Contributing
 
