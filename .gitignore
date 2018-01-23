@@ -1,5 +1,8 @@
+# Only for development
+thirdparty/*
 .vagrant
 tags
+
 *.gem
 *.rbc
 /.config
