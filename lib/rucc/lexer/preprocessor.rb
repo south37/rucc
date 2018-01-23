@@ -532,7 +532,7 @@ module Rucc
         # NOTE: file may not exist
         begin
           fp = File.open(path, "r")
-        rescue Errno::ENOENT
+        rescue Errno::ENOENT, Errno::ENOTDIR
           return false
         end
 
