@@ -52,12 +52,20 @@ module Rucc
       parse.each do |toplevel_ast|
         @gen.emit_toplevel(toplevel_ast)
       end
-
       @out.rewind
       @out.read
     end
 
+    def run!
+      asm = gen
+      File.write(asmfile, asm)
+    end
+
   private
+
+    def asmfile
+      "/tmp/ruccXXXXXX.s"
+    end
 
     def init_environment!
       pre_difined_include_path.each do |path|
