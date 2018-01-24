@@ -14,14 +14,14 @@ module Rucc
       @option.parse!(argv)
 
       if input
-        filename = "-"
+        @filename = "-"
       else
-        filename = argv.first
-        input = File.open(filename)
+        @filename = argv.first
+        input = File.open(@filename)
       end
 
       # Setup lexer
-      @lexer = Lexer.new(input, filename)
+      @lexer = Lexer.new(input, @filename)
 
       # Setup parser
       label_gen = LabelGen.new
@@ -59,12 +59,18 @@ module Rucc
     def run!
       asm = gen
       File.write(asmfile, asm)
+      # TODO(south37) Check status code
+      `as -o #{outfile} -c #{asmfile}`
     end
 
   private
 
     def asmfile
       "/tmp/ruccXXXXXX.s"
+    end
+
+    def outfile
+      @filename.gsub(/\.c$/, '.o')
     end
 
     def init_environment!

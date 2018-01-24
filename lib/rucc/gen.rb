@@ -606,7 +606,8 @@ module Rucc
       when Kind::SHORT
         ty.usig ? emit("movzwq #ax, #rax") : emit("movswq #ax, #rax")
       when Kind::INT
-        ty.usig ? emit("mov #eax, #rax") : emit("cltq");
+        # cf. https://web.stanford.edu/class/cs107/guide/x86-64.html
+        ty.usig ? emit("mov #eax, #eax") : emit("cltq");
       when Kind::LONG, Kind::LLONG
         # Do nothing
       end
