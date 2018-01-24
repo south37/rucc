@@ -50,6 +50,8 @@ RSpec.describe Rucc::Engine do
       testast '(| 1 2)', '1|2;'
       testast '1.2', '1.2;'
       testast '(+ 1.2 (conv 1=>double))', '1.2+1;'
+      testast '(return (conv 1=>int))', '_Static_assert(1 + 2 == 3, "Must not occuer");return 1;'
+      testastf '', '_Static_assert(1 + 2 == 3, "Must not occuer");'
 
       testastf '((int)=>int)f(int lv=c){lv=c;}', 'int f(int c){c;}'
       testastf '((int)=>int)f(int lv=c){lv=c;}((int)=>int)g(int lv=d){lv=d;}', 'int f(int c){c;} int g(int d){d;}'
@@ -155,7 +157,7 @@ RSpec.describe Rucc::Engine do
 
     def testastf(expected, code)
       result = Rucc::Engine.new(ARGV, StringIO.new(code)).parse.join('')
-      expect(expected).to eq result
+      expect(result).to eq expected
     end
 
     def testast(expected, code)

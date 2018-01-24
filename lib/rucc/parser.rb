@@ -86,6 +86,8 @@ module Rucc
 
         if is_funcdef?
           @toplevels.push(read_funcdef)
+        elsif next_token?(K::STATIC_ASSERT)
+          read_static_assert
         else
           read_decl(@toplevels, true)
         end
