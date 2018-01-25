@@ -1,3 +1,4 @@
+require 'fileutils'
 require "rucc/option"
 require "rucc/parser"
 require "rucc/gen"

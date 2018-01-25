@@ -1305,8 +1305,9 @@ module Rucc
         emit("call *#r11")
       else
         fname = node.fname
-        # TODO(sout37) Fix diraty hack. Call functions in stdio with `@PLT` here.
-        if fname == "printf"
+        # Add `@PLT` suffix to functions in shared library here.
+        # TODO(sout37) Fix this dirty hack.
+        if fname == "printf"  # Support only `printf`
           fname += "@PLT"
         end
         emit("call #{fname}")
