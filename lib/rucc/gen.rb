@@ -1266,7 +1266,7 @@ module Rucc
 
     # Functions in shared library
     # TODO(sout37) Fix this dirty hack.
-    SHARED_LIBRARY_FUNCTIONS  = ["printf", "calloc"]
+    SHARED_LIBRARY_FUNCTIONS  = ["printf", "calloc", "atoi"]
 
     # @param [Node] node
     def emit_func_call(node)
