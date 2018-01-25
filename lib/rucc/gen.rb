@@ -1264,6 +1264,10 @@ module Rucc
       pop("rcx")
     end
 
+    # Functions in shared library
+    # TODO(sout37) Fix this dirty hack.
+    SHARED_LIBRARY_FUNCTIONS  = ["printf", "calloc"]
+
     # @param [Node] node
     def emit_func_call(node)
       # TODO(south37) impl SAVE when necessary
@@ -1306,8 +1310,7 @@ module Rucc
       else
         fname = node.fname
         # Add `@PLT` suffix to functions in shared library here.
-        # TODO(sout37) Fix this dirty hack.
-        if fname == "printf"  # Support only `printf`
+        if SHARED_LIBRARY_FUNCTIONS.include?(fname)
           fname += "@PLT"
         end
         emit("call #{fname}")
