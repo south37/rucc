@@ -6,8 +6,9 @@ module Rucc
       @include_path = []
       @dumpasm = false
       @dontlink = false
+      @outfile = nil
     end
-    attr_reader :include_path, :dumpasm, :dontlink
+    attr_reader :include_path, :dumpasm, :dontlink, :outfile
 
     def parse!(argv)
       opt = OptionParser.new
@@ -19,6 +20,9 @@ module Rucc
       end
       opt.on('-c') do
         @dontlink = true
+      end
+      opt.on('-o outputfile') do |v|
+        @outfile = v
       end
       opt.parse!(argv)
     end

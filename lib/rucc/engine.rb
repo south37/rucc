@@ -73,7 +73,7 @@ module Rucc
         return
       end
 
-      link!(src: tmpfile('o'), dst: "a.out")
+      link!(src: tmpfile('o'), dst: (@option.outfile || "a.out"))
     end
 
   private
@@ -83,7 +83,11 @@ module Rucc
     end
 
     def outfile(ext)
-      @filename.gsub(/\.c$/, ".#{ext}")
+      if @option.outfile
+        @option.outfile
+      else
+        @filename.gsub(/\.c$/, ".#{ext}")
+      end
     end
 
     def assemble!(src:, dst:)
