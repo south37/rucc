@@ -1304,7 +1304,12 @@ module Rucc
       if isptr
         emit("call *#r11")
       else
-        emit("call #{node.fname}")
+        fname = node.fname
+        # TODO(sout37) Fix diraty hack. Call functions in stdio with `@PLT` here.
+        if fname == "printf"
+          fname += "@PLT"
+        end
+        emit("call #{fname}")
       end
       maybe_booleanize_retval(node.ty)
       if restsize > 0
