@@ -58,9 +58,15 @@ module Rucc
 
     def run!
       asm = gen
+
+      if @option.dumpasm
+        File.write(outfile('s'), asm)
+        return
+      end
+
       File.write(asmfile, asm)
       # TODO(south37) Check status code
-      `as -o #{outfile} -c #{asmfile}`
+      `as -o #{outfile('o')} -c #{asmfile}`
     end
 
   private
@@ -69,8 +75,8 @@ module Rucc
       "/tmp/ruccXXXXXX.s"
     end
 
-    def outfile
-      @filename.gsub(/\.c$/, '.o')
+    def outfile(ext)
+      @filename.gsub(/\.c$/, ".#{ext}")
     end
 
     def init_environment!
