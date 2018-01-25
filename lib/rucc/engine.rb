@@ -64,19 +64,35 @@ module Rucc
         return
       end
 
-      File.write(asmfile, asm)
-      # TODO(south37) Check status code
-      `as -o #{outfile('o')} -c #{asmfile}`
+      File.write(tmpfile('s'), asm)
+      assemble!(src: tmpfile('s'), dst: tmpfile('o'))
+
+      if @option.dontlink
+        FileUtils.copy(tmpfile('o'), outfile('o'))
+        return
+      end
+
+      link!(src: tmpfile('o'), dst: "a.out")
     end
 
   private
 
-    def asmfile
-      "/tmp/ruccXXXXXX.s"
+    def tmpfile(ext)
+      "/tmp/ruccXXXXXX.#{ext}"
     end
 
     def outfile(ext)
       @filename.gsub(/\.c$/, ".#{ext}")
+    end
+
+    def assemble!(src:, dst:)
+      # TODO(south37) Check status code
+      `as -o #{dst} -c #{src}`
+    end
+
+    def link!(src:, dst:)
+      # TODO(south37) Check status code
+      `/usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGgKweC.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. #{src} -o #{dst} -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o`
     end
 
     def init_environment!

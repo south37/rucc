@@ -5,8 +5,9 @@ module Rucc
     def initialize
       @include_path = []
       @dumpasm = false
+      @dontlink = false
     end
-    attr_reader :include_path, :dumpasm
+    attr_reader :include_path, :dumpasm, :dontlink
 
     def parse!(argv)
       opt = OptionParser.new
@@ -15,6 +16,9 @@ module Rucc
       end
       opt.on('-S') do
         @dumpasm = true
+      end
+      opt.on('-c') do
+        @dontlink = true
       end
       opt.parse!(argv)
     end
