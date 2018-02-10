@@ -436,14 +436,14 @@ test_if:
 	mov $97, %rax
 	push %rax
 	sub $8, %rsp
-	call test_if1
+	call test_if1@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -463,14 +463,14 @@ test_if:
 	mov $98, %rax
 	push %rax
 	sub $8, %rsp
-	call test_if2
+	call test_if2@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -490,14 +490,14 @@ test_if:
 	mov $99, %rax
 	push %rax
 	sub $8, %rsp
-	call test_if3
+	call test_if3@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -517,14 +517,14 @@ test_if:
 	mov $100, %rax
 	push %rax
 	sub $8, %rsp
-	call test_if4
+	call test_if4@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -544,14 +544,14 @@ test_if:
 	mov $101, %rax
 	push %rax
 	sub $8, %rsp
-	call test_if5
+	call test_if5@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -571,14 +571,14 @@ test_if:
 	mov $102, %rax
 	push %rax
 	sub $8, %rsp
-	call test_if6
+	call test_if6@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -598,14 +598,14 @@ test_if:
 	mov $103, %rax
 	push %rax
 	sub $8, %rsp
-	call test_if7
+	call test_if7@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -625,14 +625,14 @@ test_if:
 	mov $104, %rax
 	push %rax
 	sub $8, %rsp
-	call test_if8
+	call test_if8@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -652,14 +652,14 @@ test_if:
 	mov $105, %rax
 	push %rax
 	sub $8, %rsp
-	call test_if9
+	call test_if9@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -679,14 +679,14 @@ test_if:
 	mov $106, %rax
 	push %rax
 	sub $8, %rsp
-	call test_if10
+	call test_if10@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -706,14 +706,14 @@ test_if:
 	mov $107, %rax
 	push %rax
 	sub $8, %rsp
-	call test_if11
+	call test_if11@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -817,7 +817,7 @@ test_for:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -912,7 +912,7 @@ test_for:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1058,7 +1058,7 @@ test_for:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1109,7 +1109,7 @@ test_for:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1245,7 +1245,7 @@ test_for:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1333,7 +1333,7 @@ test_while:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1418,7 +1418,7 @@ test_while:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1550,7 +1550,7 @@ test_while:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1651,7 +1651,7 @@ test_while:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1736,7 +1736,7 @@ test_do:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1784,7 +1784,7 @@ test_do:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1911,7 +1911,7 @@ test_do:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2052,7 +2052,7 @@ test_do:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2143,7 +2143,7 @@ test_switch:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call ffail
+	call ffail@PLT
 	add $8, %rsp
 	pop %rdx
 	pop %rsi
@@ -2179,7 +2179,7 @@ test_switch:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call ffail
+	call ffail@PLT
 	add $8, %rsp
 	pop %rdx
 	pop %rsi
@@ -2211,7 +2211,7 @@ test_switch:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2392,7 +2392,7 @@ test_switch:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2460,7 +2460,7 @@ test_switch:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2516,7 +2516,7 @@ test_switch:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2618,7 +2618,7 @@ test_switch:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call ffail
+	call ffail@PLT
 	add $8, %rsp
 	pop %rdx
 	pop %rsi
@@ -2647,7 +2647,7 @@ test_switch:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call ffail
+	call ffail@PLT
 	add $8, %rsp
 	pop %rdx
 	pop %rsi
@@ -2680,7 +2680,7 @@ test_switch:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call ffail
+	call ffail@PLT
 	add $8, %rsp
 	pop %rdx
 	pop %rsi
@@ -2938,7 +2938,7 @@ test_switch:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2996,7 +2996,7 @@ test_goto:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3092,7 +3092,7 @@ test_goto:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3162,7 +3162,7 @@ test_label:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3207,7 +3207,7 @@ test_label:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3340,7 +3340,7 @@ test_label:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3405,7 +3405,7 @@ test_computed_goto:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3504,7 +3504,7 @@ test_computed_goto:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3574,7 +3574,7 @@ test_logor:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3608,7 +3608,7 @@ test_logor:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3642,7 +3642,7 @@ test_logor:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3668,35 +3668,35 @@ testmain:
 	lea .L228(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 274 0
 	#     test_for();
-	call test_if
+	call test_if@PLT
 	.loc 2 275 0
 	#     test_while();
-	call test_for
+	call test_for@PLT
 	.loc 2 276 0
 	#     test_do();
-	call test_while
+	call test_while@PLT
 	.loc 2 277 0
 	#     test_switch();
-	call test_do
+	call test_do@PLT
 	.loc 2 278 0
 	#     test_goto();
-	call test_switch
+	call test_switch@PLT
 	.loc 2 279 0
 	#     test_label();
-	call test_goto
+	call test_goto@PLT
 	.loc 2 280 0
 	#     test_computed_goto();
-	call test_label
+	call test_label@PLT
 	.loc 2 281 0
 	#     test_logor();
-	call test_computed_goto
+	call test_computed_goto@PLT
 	.loc 2 282 0
 	# }
-	call test_logor
+	call test_logor@PLT
 	leave
 	ret

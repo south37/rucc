@@ -153,7 +153,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -178,7 +178,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -203,7 +203,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -228,7 +228,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -253,7 +253,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -278,7 +278,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -303,7 +303,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -328,7 +328,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -353,7 +353,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -378,7 +378,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -403,7 +403,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -428,7 +428,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -453,7 +453,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -483,7 +483,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -508,7 +508,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -538,7 +538,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -563,7 +563,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -588,7 +588,7 @@ test_char:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -633,7 +633,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -666,7 +666,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -707,7 +707,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -746,7 +746,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -781,7 +781,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -814,7 +814,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -879,7 +879,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -906,7 +906,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -931,7 +931,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -957,7 +957,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -982,7 +982,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1032,7 +1032,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1082,7 +1082,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1118,7 +1118,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1143,7 +1143,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1168,7 +1168,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1193,7 +1193,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1218,7 +1218,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1243,7 +1243,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1268,7 +1268,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1293,7 +1293,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1318,7 +1318,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1343,7 +1343,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1368,7 +1368,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1393,7 +1393,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1418,7 +1418,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1443,7 +1443,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1468,7 +1468,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1508,7 +1508,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call memcmp
+	call memcmp@PLT
 	pop %rdx
 	pop %rsi
 	pop %rdi
@@ -1517,7 +1517,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1557,7 +1557,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call memcmp
+	call memcmp@PLT
 	pop %rdx
 	pop %rsi
 	pop %rdi
@@ -1566,7 +1566,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1606,7 +1606,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call memcmp
+	call memcmp@PLT
 	pop %rdx
 	pop %rsi
 	pop %rdi
@@ -1615,7 +1615,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1640,7 +1640,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1680,7 +1680,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call memcmp
+	call memcmp@PLT
 	pop %rdx
 	pop %rsi
 	pop %rdi
@@ -1689,7 +1689,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1714,7 +1714,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1754,7 +1754,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call memcmp
+	call memcmp@PLT
 	pop %rdx
 	pop %rsi
 	pop %rdi
@@ -1763,7 +1763,7 @@ test_mbstring:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1814,7 +1814,7 @@ test_float:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1855,7 +1855,7 @@ test_float:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1898,7 +1898,7 @@ test_float:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1939,7 +1939,7 @@ test_float:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1976,7 +1976,7 @@ test_ucn:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2001,7 +2001,7 @@ test_ucn:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2036,7 +2036,7 @@ test_ucn:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2069,7 +2069,7 @@ test_ucn:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2096,7 +2096,7 @@ test_ucn:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2121,7 +2121,7 @@ test_ucn:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2147,7 +2147,7 @@ test_ucn:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2228,7 +2228,7 @@ test_compound:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2268,7 +2268,7 @@ test_compound:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2295,7 +2295,7 @@ test_compound:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2335,7 +2335,7 @@ test_compound:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2364,7 +2364,7 @@ test_compound:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2397,7 +2397,7 @@ test_compound:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2429,7 +2429,7 @@ test_compound:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2462,7 +2462,7 @@ test_compound:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2507,7 +2507,7 @@ test_compound:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2550,7 +2550,7 @@ test_compound:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2577,26 +2577,26 @@ testmain:
 	lea .L119(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 123 0
 	#     test_string();
-	call test_char
+	call test_char@PLT
 	.loc 2 124 0
 	#     test_mbstring();
-	call test_string
+	call test_string@PLT
 	.loc 2 125 0
 	#     test_float();
-	call test_mbstring
+	call test_mbstring@PLT
 	.loc 2 126 0
 	#     test_ucn();
-	call test_float
+	call test_float@PLT
 	.loc 2 127 0
 	#     test_compound();
-	call test_ucn
+	call test_ucn@PLT
 	.loc 2 128 0
 	# }
-	call test_compound
+	call test_compound@PLT
 	leave
 	ret

@@ -181,7 +181,7 @@ test_signedcast:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -244,7 +244,7 @@ test_unsignedcast:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -271,7 +271,7 @@ testmain:
 	lea .L2(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 3 22 0
@@ -304,7 +304,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -341,7 +341,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -379,7 +379,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -444,16 +444,16 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
 	.loc 2 29 0
 	#     test_unsignedcast();
-	call test_signedcast
+	call test_signedcast@PLT
 	.loc 2 30 0
 	# }
-	call test_unsignedcast
+	call test_unsignedcast@PLT
 	leave
 	ret

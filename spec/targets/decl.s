@@ -167,7 +167,7 @@ t1:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -240,7 +240,7 @@ t2:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -291,7 +291,7 @@ t3:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -352,7 +352,7 @@ t4:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -415,7 +415,7 @@ t5:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -462,7 +462,7 @@ t6:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -494,26 +494,26 @@ testmain:
 	lea .L6(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 46 0
 	#     t2();
-	call t1
+	call t1@PLT
 	.loc 2 47 0
 	#     t3();
-	call t2
+	call t2@PLT
 	.loc 2 48 0
 	#     t4();
-	call t3
+	call t3@PLT
 	.loc 2 49 0
 	#     t5();
-	call t4
+	call t4@PLT
 	.loc 2 50 0
 	#     t6();
-	call t5
+	call t5@PLT
 	.loc 2 51 0
 	# }
-	call t6
+	call t6@PLT
 	leave
 	ret

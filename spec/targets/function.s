@@ -171,7 +171,7 @@ t2:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -216,7 +216,7 @@ t3:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -245,7 +245,7 @@ t3:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -274,7 +274,7 @@ t3:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -303,7 +303,7 @@ t3:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -332,7 +332,7 @@ t3:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -361,7 +361,7 @@ t3:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -421,14 +421,14 @@ t4:
 	lea -8(%rbp), %rax
 	push %rax
 	pop %rdi
-	call t4a
+	call t4a@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -471,7 +471,7 @@ t5a:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -520,7 +520,7 @@ t5a:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -569,7 +569,7 @@ t5a:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -612,7 +612,7 @@ t5b:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -661,7 +661,7 @@ t5b:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -710,7 +710,7 @@ t5b:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -810,7 +810,7 @@ t5:
 	lea -16(%rbp), %rax
 	push %rax
 	pop %rdi
-	call t5a
+	call t5a@PLT
 	pop %rdi
 	.loc 2 51 0
 	# }
@@ -820,7 +820,7 @@ t5:
 	lea -16(%rbp), %rax
 	push %rax
 	pop %rdi
-	call t5b
+	call t5b@PLT
 	pop %rdi
 	leave
 	ret
@@ -910,7 +910,7 @@ t8:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1083,7 +1083,7 @@ func_ptr_call:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call ptrtest3
+	call ptrtest3@PLT
 	add $8, %rsp
 	sub $8, %rsp
 	movsd %xmm0, (%rsp)
@@ -1093,7 +1093,7 @@ func_ptr_call:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1132,7 +1132,7 @@ func_ptr_call:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1175,7 +1175,7 @@ func_ptr_call:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1227,7 +1227,7 @@ func_ptr_call:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1266,7 +1266,7 @@ func_ptr_call:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1296,7 +1296,7 @@ func_ptr_call:
 	push %rax
 	pop %rsi
 	pop %rdi
-	call ptrtest4
+	call ptrtest4@PLT
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
@@ -1305,7 +1305,7 @@ func_ptr_call:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1351,7 +1351,7 @@ func_name:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1384,7 +1384,7 @@ func_name:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1504,14 +1504,14 @@ local_static:
 	mov $6, %rax
 	push %rax
 	sub $8, %rsp
-	call local_static2
+	call local_static2@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1531,21 +1531,21 @@ local_static:
 	mov $7, %rax
 	push %rax
 	sub $8, %rsp
-	call local_static2
+	call local_static2@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
 	.loc 2 128 0
 	#     expect(8, local_static2());
-	call local_static3
+	call local_static3@PLT
 	.loc 3 20 0
 	# #define expect_string(a, b) fexpect_string(__FILE__, __LINE__, a, b);
 	push %rdi
@@ -1563,14 +1563,14 @@ local_static:
 	mov $8, %rax
 	push %rax
 	sub $8, %rsp
-	call local_static2
+	call local_static2@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1642,14 +1642,14 @@ test_bool:
 	mov $256, %rax
 	push %rax
 	pop %rdi
-	call booltest1
+	call booltest1@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1672,14 +1672,14 @@ test_bool:
 	mov $257, %rax
 	push %rax
 	pop %rdi
-	call booltest1
+	call booltest1@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1702,7 +1702,7 @@ test_bool:
 	mov $512, %rax
 	push %rax
 	pop %rdi
-	call booltest2
+	call booltest2@PLT
 	movzx %al, %rax
 	pop %rdi
 	movsbq %al, %rax
@@ -1711,7 +1711,7 @@ test_bool:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1734,7 +1734,7 @@ test_bool:
 	mov $513, %rax
 	push %rax
 	pop %rdi
-	call booltest2
+	call booltest2@PLT
 	movzx %al, %rax
 	pop %rdi
 	movsbq %al, %rax
@@ -1743,7 +1743,7 @@ test_bool:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1830,7 +1830,7 @@ test_struct:
 	mov %r11, 8(%rsp)
 	mov -8(%rsp), %rcx
 	mov -16(%rsp), %r11
-	call sum
+	call sum@PLT
 	add $16, %rsp
 	add $8, %rsp
 	push %rax
@@ -1838,7 +1838,7 @@ test_struct:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1900,7 +1900,7 @@ testmain:
 	lea .L35(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 3 20 0
@@ -1920,14 +1920,14 @@ testmain:
 	mov $77, %rax
 	push %rax
 	sub $8, %rsp
-	call t1
+	call t1@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1939,7 +1939,7 @@ testmain:
 	mov $79, %rax
 	push %rax
 	pop %rdi
-	call t2
+	call t2@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 185 0
@@ -1968,7 +1968,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call t3
+	call t3@PLT
 	pop %r9
 	pop %r8
 	pop %rcx
@@ -1977,10 +1977,10 @@ testmain:
 	pop %rdi
 	.loc 2 186 0
 	#     t5();
-	call t4
+	call t4@PLT
 	.loc 2 187 0
 	#     expect(3, t6());
-	call t5
+	call t5@PLT
 	.loc 3 20 0
 	# #define expect_string(a, b) fexpect_string(__FILE__, __LINE__, a, b);
 	push %rdi
@@ -1998,14 +1998,14 @@ testmain:
 	mov $3, %rax
 	push %rax
 	sub $8, %rsp
-	call t6
+	call t6@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2033,7 +2033,7 @@ testmain:
 	push %rax
 	pop %rsi
 	pop %rdi
-	call t7
+	call t7@PLT
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
@@ -2042,7 +2042,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2079,7 +2079,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2116,7 +2116,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2129,12 +2129,12 @@ testmain:
 	push %rax
 	pop %rdi
 	mov $0, %eax
-	call t8
+	call t8@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 193 0
 	#     expect(7, t10(3, 4.0));
-	call t9
+	call t9@PLT
 	.loc 3 20 0
 	# #define expect_string(a, b) fexpect_string(__FILE__, __LINE__, a, b);
 	push %rdi
@@ -2164,42 +2164,42 @@ testmain:
 	movsd (%rsp), %xmm0
 	add $8, %rsp
 	pop %rdi
-	call t10
+	call t10@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
 	.loc 2 195 0
 	#     func_name();
-	call func_ptr_call
+	call func_ptr_call@PLT
 	.loc 2 196 0
 	#     local_static();
-	call func_name
+	call func_name@PLT
 	.loc 2 197 0
 	#     empty();
-	call local_static
+	call local_static@PLT
 	.loc 2 198 0
 	#     empty2();
-	call empty
+	call empty@PLT
 	.loc 2 199 0
 	#     test_bool();
-	call empty2
+	call empty2@PLT
 	.loc 2 200 0
 	#     test_struct();
-	call test_bool
+	call test_bool@PLT
 	.loc 2 201 0
 	#     test_funcdesg();
-	call test_struct
+	call test_struct@PLT
 	.loc 2 202 0
 	#     expect(3, retfunc()());
-	call test_funcdesg
+	call test_funcdesg@PLT
 	.loc 3 20 0
 	# #define expect_string(a, b) fexpect_string(__FILE__, __LINE__, a, b);
 	push %rdi
@@ -2217,7 +2217,7 @@ testmain:
 	mov $3, %rax
 	push %rax
 	sub $8, %rsp
-	call retfunc
+	call retfunc@PLT
 	push %rax
 	pop %r11
 	call *%r11
@@ -2227,7 +2227,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2247,7 +2247,7 @@ testmain:
 	mov $3, %rax
 	push %rax
 	sub $8, %rsp
-	call retfunc2
+	call retfunc2@PLT
 	push %rax
 	pop %r11
 	call *%r11
@@ -2257,7 +2257,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi

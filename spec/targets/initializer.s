@@ -203,7 +203,7 @@ verify:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -300,7 +300,7 @@ verify_short:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -366,7 +366,7 @@ test_array:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -407,7 +407,7 @@ test_array:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -448,7 +448,7 @@ test_array:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -504,7 +504,7 @@ test_array:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call verify
+	call verify@PLT
 	pop %rdx
 	pop %rsi
 	pop %rdi
@@ -544,7 +544,7 @@ test_array:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call verify
+	call verify@PLT
 	pop %rdx
 	pop %rsi
 	pop %rdi
@@ -598,7 +598,7 @@ test_array:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call verify
+	call verify@PLT
 	pop %rdx
 	pop %rsi
 	pop %rdi
@@ -667,7 +667,7 @@ test_array:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call verify_short
+	call verify_short@PLT
 	pop %rdx
 	pop %rsi
 	pop %rdi
@@ -711,7 +711,7 @@ test_array:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -761,7 +761,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -800,7 +800,7 @@ test_string:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -854,7 +854,7 @@ test_struct:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call verify
+	call verify@PLT
 	add $8, %rsp
 	pop %rdx
 	pop %rsi
@@ -897,7 +897,7 @@ test_primitive:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -947,7 +947,7 @@ test_nested:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -972,7 +972,7 @@ test_nested:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1007,7 +1007,7 @@ test_nested:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1042,7 +1042,7 @@ test_nested:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1098,7 +1098,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1137,7 +1137,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1176,7 +1176,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1222,7 +1222,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1260,7 +1260,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1298,7 +1298,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1336,7 +1336,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1384,7 +1384,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1422,7 +1422,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1460,7 +1460,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1498,7 +1498,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1536,7 +1536,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1574,7 +1574,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1620,7 +1620,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1659,7 +1659,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1698,7 +1698,7 @@ test_array_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1739,7 +1739,7 @@ test_struct_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1764,7 +1764,7 @@ test_struct_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1795,7 +1795,7 @@ test_struct_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1827,7 +1827,7 @@ test_struct_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1852,7 +1852,7 @@ test_struct_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1926,7 +1926,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1975,7 +1975,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2024,7 +2024,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2073,7 +2073,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2122,7 +2122,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2171,7 +2171,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2220,7 +2220,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2269,7 +2269,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2318,7 +2318,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2367,7 +2367,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2416,7 +2416,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2465,7 +2465,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2525,7 +2525,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2575,7 +2575,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2610,7 +2610,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2647,7 +2647,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2684,7 +2684,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2721,7 +2721,7 @@ test_complex_designator:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2766,7 +2766,7 @@ test_zero:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2793,7 +2793,7 @@ test_zero:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2826,7 +2826,7 @@ test_zero:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2853,7 +2853,7 @@ test_zero:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2886,7 +2886,7 @@ test_zero:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2913,7 +2913,7 @@ test_zero:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2945,7 +2945,7 @@ test_zero:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2999,7 +2999,7 @@ test_typedef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -3032,7 +3032,7 @@ test_typedef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -3075,7 +3075,7 @@ test_excessive:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3107,7 +3107,7 @@ test_excessive:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3147,7 +3147,7 @@ test_excessive:
 	pop %rsi
 	pop %rdi
 	mov $0, %eax
-	call strncmp
+	call strncmp@PLT
 	pop %rdx
 	pop %rsi
 	pop %rdi
@@ -3156,7 +3156,7 @@ test_excessive:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3182,41 +3182,41 @@ testmain:
 	lea .L78(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 185 0
 	#     test_string();
-	call test_array
+	call test_array@PLT
 	.loc 2 186 0
 	#     test_struct();
-	call test_string
+	call test_string@PLT
 	.loc 2 187 0
 	#     test_primitive();
-	call test_struct
+	call test_struct@PLT
 	.loc 2 188 0
 	#     test_nested();
-	call test_primitive
+	call test_primitive@PLT
 	.loc 2 189 0
 	#     test_array_designator();
-	call test_nested
+	call test_nested@PLT
 	.loc 2 190 0
 	#     test_struct_designator();
-	call test_array_designator
+	call test_array_designator@PLT
 	.loc 2 191 0
 	#     test_complex_designator();
-	call test_struct_designator
+	call test_struct_designator@PLT
 	.loc 2 192 0
 	#     test_zero();
-	call test_complex_designator
+	call test_complex_designator@PLT
 	.loc 2 193 0
 	#     test_typedef();
-	call test_zero
+	call test_zero@PLT
 	.loc 2 194 0
 	#     test_excessive();
-	call test_typedef
+	call test_typedef@PLT
 	.loc 2 195 0
 	# }
-	call test_excessive
+	call test_excessive@PLT
 	leave
 	ret

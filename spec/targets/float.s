@@ -273,7 +273,7 @@ recursive:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call recursive
+	call recursive@PLT
 	add $8, %rsp
 	leave
 	ret
@@ -347,7 +347,7 @@ fmt:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call vsnprintf
+	call vsnprintf@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -389,7 +389,7 @@ fmtint:
 	pop %rsi
 	pop %rdi
 	mov $0, %eax
-	call fmt
+	call fmt@PLT
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
@@ -423,7 +423,7 @@ fmtdbl:
 	add $8, %rsp
 	pop %rdi
 	mov $1, %eax
-	call fmt
+	call fmt@PLT
 	pop %rdi
 	leave
 	ret
@@ -464,14 +464,14 @@ std:
 	mov $21, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -500,14 +500,14 @@ std:
 	mov $0, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -536,14 +536,14 @@ std:
 	mov $2, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -572,14 +572,14 @@ std:
 	mov $1, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -608,14 +608,14 @@ std:
 	mov $6, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -650,14 +650,14 @@ std:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call fmtdbl
+	call fmtdbl@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -686,14 +686,14 @@ std:
 	mov $24, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -728,14 +728,14 @@ std:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call fmtdbl
+	call fmtdbl@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -764,14 +764,14 @@ std:
 	mov $38, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -800,14 +800,14 @@ std:
 	mov $128, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -842,14 +842,14 @@ std:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call fmtdbl
+	call fmtdbl@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -883,14 +883,14 @@ std:
 	sub %rcx, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -924,14 +924,14 @@ std:
 	sub %rcx, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -970,7 +970,7 @@ std:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -1006,14 +1006,14 @@ std:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call fmtdbl
+	call fmtdbl@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1042,14 +1042,14 @@ std:
 	mov $15, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1084,14 +1084,14 @@ std:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call fmtdbl
+	call fmtdbl@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1120,14 +1120,14 @@ std:
 	mov $53, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1162,14 +1162,14 @@ std:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call fmtdbl
+	call fmtdbl@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1198,14 +1198,14 @@ std:
 	mov $308, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1234,14 +1234,14 @@ std:
 	mov $1024, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1276,14 +1276,14 @@ std:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call fmtdbl
+	call fmtdbl@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1317,14 +1317,14 @@ std:
 	sub %rcx, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1358,14 +1358,14 @@ std:
 	sub %rcx, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1404,7 +1404,7 @@ std:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -1440,14 +1440,14 @@ std:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call fmtdbl
+	call fmtdbl@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1476,14 +1476,14 @@ std:
 	mov $15, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1518,14 +1518,14 @@ std:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call fmtdbl
+	call fmtdbl@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1554,14 +1554,14 @@ std:
 	mov $53, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1596,14 +1596,14 @@ std:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call fmtdbl
+	call fmtdbl@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1632,14 +1632,14 @@ std:
 	mov $308, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1668,14 +1668,14 @@ std:
 	mov $1024, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1710,14 +1710,14 @@ std:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call fmtdbl
+	call fmtdbl@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1751,14 +1751,14 @@ std:
 	sub %rcx, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1792,14 +1792,14 @@ std:
 	sub %rcx, %rax
 	push %rax
 	pop %rdi
-	call fmtint
+	call fmtint@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1838,7 +1838,7 @@ std:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -1874,14 +1874,14 @@ std:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call fmtdbl
+	call fmtdbl@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1909,12 +1909,12 @@ testmain:
 	lea .L93(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 80 0
 	# 
-	call std
+	call std@PLT
 	.loc 3 20 0
 	# #define expect_string(a, b) fexpect_string(__FILE__, __LINE__, a, b);
 	push %rdi
@@ -1947,7 +1947,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2001,7 +2001,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2041,7 +2041,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2094,7 +2094,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2133,7 +2133,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2176,7 +2176,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2228,7 +2228,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2280,7 +2280,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2332,7 +2332,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2384,7 +2384,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2433,7 +2433,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2482,7 +2482,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2531,7 +2531,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2580,7 +2580,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2618,7 +2618,7 @@ testmain:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call tf1
+	call tf1@PLT
 	add $8, %rsp
 	sub $8, %rsp
 	movsd %xmm0, (%rsp)
@@ -2628,7 +2628,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2662,7 +2662,7 @@ testmain:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call tf1
+	call tf1@PLT
 	add $8, %rsp
 	sub $8, %rsp
 	movsd %xmm0, (%rsp)
@@ -2672,7 +2672,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2709,7 +2709,7 @@ testmain:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call tf2
+	call tf2@PLT
 	add $8, %rsp
 	sub $8, %rsp
 	movsd %xmm0, (%rsp)
@@ -2719,7 +2719,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2753,7 +2753,7 @@ testmain:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call tf2
+	call tf2@PLT
 	add $8, %rsp
 	sub $8, %rsp
 	movsd %xmm0, (%rsp)
@@ -2763,7 +2763,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2799,7 +2799,7 @@ testmain:
 	cvttsd2si %xmm0, %eax
 	push %rax
 	pop %rdi
-	call tf3
+	call tf3@PLT
 	pop %rdi
 	sub $8, %rsp
 	movsd %xmm0, (%rsp)
@@ -2809,7 +2809,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2840,7 +2840,7 @@ testmain:
 	mov $10, %rax
 	push %rax
 	pop %rdi
-	call tf3
+	call tf3@PLT
 	pop %rdi
 	sub $8, %rsp
 	movsd %xmm0, (%rsp)
@@ -2850,7 +2850,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2889,7 +2889,7 @@ testmain:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call tf1
+	call tf1@PLT
 	add $8, %rsp
 	cvtps2pd %xmm0, %xmm0
 	sub $8, %rsp
@@ -2900,7 +2900,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2933,7 +2933,7 @@ testmain:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call tf1
+	call tf1@PLT
 	add $8, %rsp
 	cvtps2pd %xmm0, %xmm0
 	sub $8, %rsp
@@ -2944,7 +2944,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2980,7 +2980,7 @@ testmain:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call tf2
+	call tf2@PLT
 	add $8, %rsp
 	cvtps2pd %xmm0, %xmm0
 	sub $8, %rsp
@@ -2991,7 +2991,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -3024,7 +3024,7 @@ testmain:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call tf2
+	call tf2@PLT
 	add $8, %rsp
 	cvtps2pd %xmm0, %xmm0
 	sub $8, %rsp
@@ -3035,7 +3035,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -3070,7 +3070,7 @@ testmain:
 	cvttsd2si %xmm0, %eax
 	push %rax
 	pop %rdi
-	call tf3
+	call tf3@PLT
 	pop %rdi
 	cvtps2pd %xmm0, %xmm0
 	sub $8, %rsp
@@ -3081,7 +3081,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -3111,7 +3111,7 @@ testmain:
 	mov $10, %rax
 	push %rax
 	pop %rdi
-	call tf3
+	call tf3@PLT
 	pop %rdi
 	cvtps2pd %xmm0, %xmm0
 	sub $8, %rsp
@@ -3122,7 +3122,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -3155,7 +3155,7 @@ testmain:
 	movsd %xmm0, (%rsp)
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call recursive
+	call recursive@PLT
 	add $8, %rsp
 	sub $8, %rsp
 	movsd %xmm0, (%rsp)
@@ -3165,7 +3165,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
