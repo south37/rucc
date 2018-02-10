@@ -31,7 +31,7 @@ __va_arg_gp:
 	mov %rax, %rcx
 	pop %rax
 	add %rcx, %rax
-	mov %eax, %rax
+	mov %eax, %eax
 	push %rax
 	mov -8(%rbp), %rax
 	mov (%rsp), %rcx
@@ -88,7 +88,7 @@ __va_arg_fp:
 	mov %rax, %rcx
 	pop %rax
 	add %rcx, %rax
-	mov %eax, %rax
+	mov %eax, %eax
 	push %rax
 	.loc 1 23 0
 	# }
@@ -248,7 +248,7 @@ __bswap_32:
 	sal %cl, %eax
 	pop %rcx
 	or %rcx, %rax
-	mov %eax, %rax
+	mov %eax, %eax
 	leave
 	ret
 	leave
@@ -475,7 +475,7 @@ print:
 	pop %rsi
 	pop %rdi
 	mov $0, %eax
-	call printf
+	call printf@PLT
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
@@ -538,7 +538,7 @@ printfail:
 	push %rax
 	pop %rdi
 	mov $0, %eax
-	call printf
+	call printf@PLT
 	add $8, %rsp
 	pop %rdi
 	leave
@@ -585,7 +585,7 @@ ffail:
 	pop %rsi
 	pop %rdi
 	mov $0, %eax
-	call printf
+	call printf@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -664,7 +664,7 @@ fexpect:
 	pop %rsi
 	pop %rdi
 	mov $0, %eax
-	call printf
+	call printf@PLT
 	add $8, %rsp
 	pop %r8
 	pop %rcx
@@ -753,7 +753,7 @@ fexpect_string:
 	pop %rsi
 	pop %rdi
 	mov $0, %eax
-	call printf
+	call printf@PLT
 	add $8, %rsp
 	pop %r8
 	pop %rcx
@@ -852,7 +852,7 @@ fexpectf:
 	pop %rsi
 	pop %rdi
 	mov $2, %eax
-	call printf
+	call printf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rdx
@@ -940,7 +940,7 @@ fexpectd:
 	pop %rsi
 	pop %rdi
 	mov $2, %eax
-	call printf
+	call printf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rdx
@@ -1029,7 +1029,7 @@ fexpectl:
 	pop %rsi
 	pop %rdi
 	mov $0, %eax
-	call printf
+	call printf@PLT
 	add $8, %rsp
 	pop %r8
 	pop %rcx
@@ -1100,7 +1100,7 @@ main:
 	push %rax
 	pop %rdi
 	mov $0, %eax
-	call printf
+	call printf@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 4 82 0

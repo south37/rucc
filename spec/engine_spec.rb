@@ -1,3 +1,5 @@
+require 'timecop'
+
 require 'spec_helper'
 require 'helpers'
 require 'rucc'
@@ -172,6 +174,14 @@ RSpec.describe Rucc::Engine do
 
         # NOTE: skip import.c because it causes error interntionally
         if basename == "import.c"
+          next
+        end
+
+        # NOTE: macro.c depends on date, so test it in fixed time
+        if basename == "macro.c"
+          Timecop.freeze(Date.new(2018, 1, 21)) do
+            test(f)
+          end
           next
         end
 

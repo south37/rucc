@@ -31,7 +31,7 @@ __va_arg_gp:
 	mov %rax, %rcx
 	pop %rax
 	add %rcx, %rax
-	mov %eax, %rax
+	mov %eax, %eax
 	push %rax
 	mov -8(%rbp), %rax
 	mov (%rsp), %rcx
@@ -88,7 +88,7 @@ __va_arg_fp:
 	mov %rax, %rcx
 	pop %rax
 	add %rcx, %rax
-	mov %eax, %rax
+	mov %eax, %eax
 	push %rax
 	.loc 1 23 0
 	# }
@@ -1315,7 +1315,7 @@ test_relative:
 	mov $0, %rax
 	push %rax
 	mov $1, %rax
-	mov %eax, %rax
+	mov %eax, %eax
 	push %rax
 	mov $0, %rax
 	push %rax
@@ -1352,7 +1352,7 @@ test_relative:
 	mov $0, %rax
 	push %rax
 	mov $1, %rax
-	mov %eax, %rax
+	mov %eax, %eax
 	push %rax
 	mov $0, %rax
 	push %rax

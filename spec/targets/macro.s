@@ -116,7 +116,7 @@ __bswap_32:
 	sal %cl, %eax
 	pop %rcx
 	or %rcx, %rax
-	mov %eax, %rax
+	mov %eax, %eax
 	leave
 	ret
 	leave
@@ -309,7 +309,7 @@ __va_arg_gp:
 	mov %rax, %rcx
 	pop %rax
 	add %rcx, %rax
-	mov %eax, %rax
+	mov %eax, %eax
 	push %rax
 	.loc 2 151 0
 	# }
@@ -368,7 +368,7 @@ __va_arg_fp:
 	mov %rax, %rcx
 	pop %rax
 	add %rcx, %rax
-	mov %eax, %rax
+	mov %eax, %eax
 	push %rax
 	.loc 3 23 0
 	# }
