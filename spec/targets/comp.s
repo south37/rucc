@@ -142,7 +142,7 @@ testmain:
 	lea .L0(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	pop %rdi
 	.file 3 "/home/vagrant/rucc/spec/targets/test.h"
 	.loc 3 20 0
@@ -174,7 +174,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -207,7 +207,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -240,7 +240,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -273,7 +273,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -306,7 +306,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -339,7 +339,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -372,7 +372,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -405,7 +405,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -438,7 +438,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -471,7 +471,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -504,7 +504,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -537,7 +537,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -583,7 +583,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -628,7 +628,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -671,7 +671,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -714,7 +714,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -757,7 +757,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -800,7 +800,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -843,7 +843,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -886,7 +886,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -929,7 +929,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -973,7 +973,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1017,7 +1017,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1061,7 +1061,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -1105,7 +1105,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx

@@ -168,7 +168,7 @@ many_ints:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -199,7 +199,7 @@ many_ints:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -230,7 +230,7 @@ many_ints:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -261,7 +261,7 @@ many_ints:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -292,7 +292,7 @@ many_ints:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -323,7 +323,7 @@ many_ints:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -354,7 +354,7 @@ many_ints:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -385,7 +385,7 @@ many_ints:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -416,7 +416,7 @@ many_ints:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -494,7 +494,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -528,7 +528,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -562,7 +562,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -596,7 +596,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -630,7 +630,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -664,7 +664,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -698,7 +698,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -732,7 +732,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -766,7 +766,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -800,7 +800,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -834,7 +834,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -868,7 +868,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -902,7 +902,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -936,7 +936,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -970,7 +970,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -1004,7 +1004,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -1038,7 +1038,7 @@ many_floats:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -1160,7 +1160,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1190,7 +1190,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1229,7 +1229,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1259,7 +1259,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1298,7 +1298,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1328,7 +1328,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1367,7 +1367,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1397,7 +1397,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1436,7 +1436,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1466,7 +1466,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1505,7 +1505,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1535,7 +1535,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1574,7 +1574,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1604,7 +1604,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1643,7 +1643,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1673,7 +1673,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1712,7 +1712,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1742,7 +1742,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1781,7 +1781,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1811,7 +1811,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1850,7 +1850,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1880,7 +1880,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1919,7 +1919,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1949,7 +1949,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1988,7 +1988,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2018,7 +2018,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2057,7 +2057,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2087,7 +2087,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2126,7 +2126,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2156,7 +2156,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2195,7 +2195,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2225,7 +2225,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2264,7 +2264,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2294,7 +2294,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2333,7 +2333,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2363,7 +2363,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2402,7 +2402,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2432,7 +2432,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2471,7 +2471,7 @@ mixed:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -2501,7 +2501,7 @@ mixed:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2527,7 +2527,7 @@ testmain:
 	lea .L86(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 42 0
@@ -2562,7 +2562,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call many_ints
+	call many_ints@PLT
 	add $24, %rsp
 	pop %r9
 	pop %r8
@@ -2739,7 +2739,7 @@ testmain:
 	add $8, %rsp
 	movsd (%rsp), %xmm0
 	add $8, %rsp
-	call many_floats
+	call many_floats@PLT
 	add $72, %rsp
 	add $8, %rsp
 	movsd (%rsp), %xmm7
@@ -3001,7 +3001,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call mixed
+	call mixed@PLT
 	add $208, %rsp
 	add $8, %rsp
 	movsd (%rsp), %xmm7

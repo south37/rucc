@@ -487,7 +487,7 @@ print:
 	mov stdout+0(%rip), %rax
 	push %rax
 	pop %rdi
-	call fflush
+	call fflush@PLT
 	pop %rdi
 	leave
 	ret
@@ -510,12 +510,12 @@ printfail:
 	mov stdout+0(%rip), %rax
 	push %rax
 	pop %rdi
-	call fileno
+	call fileno@PLT
 	add $8, %rsp
 	pop %rdi
 	push %rax
 	pop %rdi
-	call isatty
+	call isatty@PLT
 	add $8, %rsp
 	pop %rdi
 	test %rax, %rax
@@ -557,7 +557,7 @@ ffail:
 	.loc 4 34 0
 	#     printf("%s:%d: %s\n", file, line, msg);
 	sub $8, %rsp
-	call printfail
+	call printfail@PLT
 	add $8, %rsp
 	.loc 4 35 0
 	#     exit(1);
@@ -597,7 +597,7 @@ ffail:
 	mov $1, %rax
 	push %rax
 	pop %rdi
-	call exit
+	call exit@PLT
 	pop %rdi
 	leave
 	ret
@@ -633,7 +633,7 @@ fexpect:
 	.L6:
 	.loc 4 42 0
 	#     printf("%s:%d: %d expected, but got %d\n", file, line, a, b);
-	call printfail
+	call printfail@PLT
 	.loc 4 43 0
 	#     exit(1);
 	push %rdi
@@ -678,7 +678,7 @@ fexpect:
 	mov $1, %rax
 	push %rax
 	pop %rdi
-	call exit
+	call exit@PLT
 	add $8, %rsp
 	pop %rdi
 	leave
@@ -707,7 +707,7 @@ fexpect_string:
 	push %rax
 	pop %rsi
 	pop %rdi
-	call strcmp
+	call strcmp@PLT
 	pop %rsi
 	pop %rdi
 	cmp $0, %rax
@@ -722,7 +722,7 @@ fexpect_string:
 	.L8:
 	.loc 4 50 0
 	#     printf("%s:%d: \"%s\" expected, but got \"%s\"\n", file, line, a, b);
-	call printfail
+	call printfail@PLT
 	.loc 4 51 0
 	#     exit(1);
 	push %rdi
@@ -767,7 +767,7 @@ fexpect_string:
 	mov $1, %rax
 	push %rax
 	pop %rdi
-	call exit
+	call exit@PLT
 	add $8, %rsp
 	pop %rdi
 	leave
@@ -808,7 +808,7 @@ fexpectf:
 	.L10:
 	.loc 4 58 0
 	#     printf("%s:%d: %f expected, but got %f\n", file, line, a, b);
-	call printfail
+	call printfail@PLT
 	.loc 4 59 0
 	#     exit(1);
 	push %rdi
@@ -865,7 +865,7 @@ fexpectf:
 	mov $1, %rax
 	push %rax
 	pop %rdi
-	call exit
+	call exit@PLT
 	add $8, %rsp
 	pop %rdi
 	leave
@@ -906,7 +906,7 @@ fexpectd:
 	.L12:
 	.loc 4 66 0
 	#     printf("%s:%d: %lf expected, but got %lf\n", file, line, a, b);
-	call printfail
+	call printfail@PLT
 	.loc 4 67 0
 	#     exit(1);
 	push %rdi
@@ -953,7 +953,7 @@ fexpectd:
 	mov $1, %rax
 	push %rax
 	pop %rdi
-	call exit
+	call exit@PLT
 	add $8, %rsp
 	pop %rdi
 	leave
@@ -990,7 +990,7 @@ fexpectl:
 	.L14:
 	.loc 4 74 0
 	#     printf("%s:%d: %ld expected, but got %ld\n", file, line, a, b);
-	call printfail
+	call printfail@PLT
 	.loc 4 75 0
 	#     exit(1);
 	push %rdi
@@ -1043,7 +1043,7 @@ fexpectl:
 	mov $1, %rax
 	push %rax
 	pop %rdi
-	call exit
+	call exit@PLT
 	add $8, %rsp
 	pop %rdi
 	leave
@@ -1058,7 +1058,7 @@ main:
 	# }
 	.loc 4 80 0
 	#     printf(isatty(fileno(stdout)) ? "\e[32mOK\e[0m\n" : "OK\n");
-	call testmain
+	call testmain@PLT
 	.loc 4 81 0
 	#     return 0;
 	push %rdi
@@ -1072,12 +1072,12 @@ main:
 	mov stdout+0(%rip), %rax
 	push %rax
 	pop %rdi
-	call fileno
+	call fileno@PLT
 	add $8, %rsp
 	pop %rdi
 	push %rax
 	pop %rdi
-	call isatty
+	call isatty@PLT
 	add $8, %rsp
 	pop %rdi
 	test %rax, %rax

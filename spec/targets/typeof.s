@@ -159,7 +159,7 @@ test_basic:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -191,7 +191,7 @@ test_basic:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -247,7 +247,7 @@ test_array:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -276,7 +276,7 @@ test_array:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -313,7 +313,7 @@ test_array:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -350,7 +350,7 @@ test_array:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -395,7 +395,7 @@ test_alt:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -422,17 +422,17 @@ testmain:
 	lea .L8(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 33 0
 	#     test_array();
-	call test_basic
+	call test_basic@PLT
 	.loc 2 34 0
 	#     test_alt();
-	call test_array
+	call test_array@PLT
 	.loc 2 35 0
 	# }
-	call test_alt
+	call test_alt@PLT
 	leave
 	ret

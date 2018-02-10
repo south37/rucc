@@ -270,7 +270,7 @@ test_pointer:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -301,7 +301,7 @@ test_pointer:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -332,7 +332,7 @@ test_pointer:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -385,7 +385,7 @@ test_typedef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -431,7 +431,7 @@ test_typedef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -465,7 +465,7 @@ test_typedef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -499,7 +499,7 @@ test_typedef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -537,7 +537,7 @@ test_typedef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -566,7 +566,7 @@ test_typedef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -595,7 +595,7 @@ test_typedef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -631,7 +631,7 @@ test_align:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -657,32 +657,32 @@ testmain:
 	lea .L11(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 3 103 0
 	#     test_signed();
-	call test_type
+	call test_type@PLT
 	.loc 3 104 0
 	#     test_unsigned();
-	call test_signed
+	call test_signed@PLT
 	.loc 3 105 0
 	#     test_storage_class();
-	call test_unsigned
+	call test_unsigned@PLT
 	.loc 3 106 0
 	#     test_pointer();
-	call test_storage_class
+	call test_storage_class@PLT
 	.loc 3 107 0
 	#     test_unusual_order();
-	call test_pointer
+	call test_pointer@PLT
 	.loc 3 108 0
 	#     test_typedef();
-	call test_unusual_order
+	call test_unusual_order@PLT
 	.loc 3 109 0
 	#     test_align();
-	call test_typedef
+	call test_typedef@PLT
 	.loc 3 110 0
 	# }
-	call test_align
+	call test_align@PLT
 	leave
 	ret

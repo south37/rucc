@@ -182,14 +182,14 @@ test_return_address_sub1:
 	pop %r11
 	push %rax
 	sub $8, %rsp
-	call test_return_address_sub2
+	call test_return_address_sub2@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -226,7 +226,7 @@ test_return_address:
 	#     ptr = test_return_address_sub1();
 	.L0:
 	sub $8, %rsp
-	call test_return_address_sub1
+	call test_return_address_sub1@PLT
 	add $8, %rsp
 	mov %rax, -8(%rbp)
 	.loc 2 23 0
@@ -282,7 +282,7 @@ test_return_address:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -309,11 +309,11 @@ testmain:
 	lea .L11(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 33 0
 	# }
-	call test_return_address
+	call test_return_address@PLT
 	leave
 	ret

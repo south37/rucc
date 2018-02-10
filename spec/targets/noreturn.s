@@ -148,7 +148,7 @@ testmain:
 	lea .L0(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	leave

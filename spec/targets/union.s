@@ -162,7 +162,7 @@ t1:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -225,7 +225,7 @@ t2:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -345,7 +345,7 @@ t3:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -382,7 +382,7 @@ test_sizeof:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -407,7 +407,7 @@ test_sizeof:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -432,7 +432,7 @@ test_sizeof:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -458,20 +458,20 @@ testmain:
 	lea .L6(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 33 0
 	#     t2();
-	call t1
+	call t1@PLT
 	.loc 2 34 0
 	#     t3();
-	call t2
+	call t2@PLT
 	.loc 2 35 0
 	#     test_sizeof();
-	call t3
+	call t3@PLT
 	.loc 2 36 0
 	# }
-	call test_sizeof
+	call test_sizeof@PLT
 	leave
 	ret

@@ -200,7 +200,7 @@ testmain:
 	lea .L0(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.file 3 "/home/vagrant/rucc/spec/targets/test.h"
@@ -222,14 +222,14 @@ testmain:
 	push %rax
 	sub $8, %rsp
 	mov $0, %eax
-	call no_declaration
+	call no_declaration@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -258,7 +258,7 @@ testmain:
 	pop %rsi
 	pop %rdi
 	mov $0, %eax
-	call oldstyle1
+	call oldstyle1@PLT
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
@@ -267,7 +267,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -287,14 +287,14 @@ testmain:
 	mov $4, %rax
 	push %rax
 	sub $8, %rsp
-	call oldstyle2
+	call oldstyle2@PLT
 	add $8, %rsp
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -317,14 +317,14 @@ testmain:
 	mov $5, %rax
 	push %rax
 	pop %rdi
-	call oldstyle3
+	call oldstyle3@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -356,14 +356,14 @@ testmain:
 	movsd (%rsp), %xmm0
 	add $8, %rsp
 	pop %rdi
-	call oldstyle4
+	call oldstyle4@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi

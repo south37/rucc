@@ -211,7 +211,7 @@ expects:
 	mov $1, %rax
 	push %rax
 	pop %rdi
-	call exit
+	call exit@PLT
 	add $8, %rsp
 	pop %rdi
 	.L0:
@@ -237,7 +237,7 @@ testmain:
 	lea .L3(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 16 0
@@ -275,7 +275,7 @@ testmain:
 	push %rax
 	pop %rsi
 	pop %rdi
-	call expects
+	call expects@PLT
 	pop %rsi
 	pop %rdi
 	.loc 2 19 0
@@ -300,7 +300,7 @@ testmain:
 	push %rax
 	pop %rsi
 	pop %rdi
-	call expects
+	call expects@PLT
 	pop %rsi
 	pop %rdi
 	.loc 2 21 0
@@ -339,7 +339,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpectl
+	call fexpectl@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -376,7 +376,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpectl
+	call fexpectl@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -403,7 +403,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpectl
+	call fexpectl@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -428,7 +428,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpectl
+	call fexpectl@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -453,7 +453,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpectl
+	call fexpectl@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -484,7 +484,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpectl
+	call fexpectl@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi

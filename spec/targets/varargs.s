@@ -153,7 +153,7 @@ test_builtin:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -178,7 +178,7 @@ test_builtin:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -203,7 +203,7 @@ test_builtin:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -271,7 +271,7 @@ test_int:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -321,7 +321,7 @@ test_int:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_gp
+	call __va_arg_gp@PLT
 	pop %rdi
 	jmp .L6
 	.L5:
@@ -346,7 +346,7 @@ test_int:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_fp
+	call __va_arg_fp@PLT
 	pop %rdi
 	jmp .L8
 	.L7:
@@ -358,7 +358,7 @@ test_int:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_mem
+	call __va_arg_mem@PLT
 	pop %rdi
 	.L8:
 	.L6:
@@ -369,7 +369,7 @@ test_int:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -419,7 +419,7 @@ test_int:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_gp
+	call __va_arg_gp@PLT
 	pop %rdi
 	jmp .L11
 	.L10:
@@ -444,7 +444,7 @@ test_int:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_fp
+	call __va_arg_fp@PLT
 	pop %rdi
 	jmp .L13
 	.L12:
@@ -456,7 +456,7 @@ test_int:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_mem
+	call __va_arg_mem@PLT
 	pop %rdi
 	.L13:
 	.L11:
@@ -467,7 +467,7 @@ test_int:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -517,7 +517,7 @@ test_int:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_gp
+	call __va_arg_gp@PLT
 	pop %rdi
 	jmp .L16
 	.L15:
@@ -542,7 +542,7 @@ test_int:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_fp
+	call __va_arg_fp@PLT
 	pop %rdi
 	jmp .L18
 	.L17:
@@ -554,7 +554,7 @@ test_int:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_mem
+	call __va_arg_mem@PLT
 	pop %rdi
 	.L18:
 	.L16:
@@ -565,7 +565,7 @@ test_int:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -615,7 +615,7 @@ test_int:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_gp
+	call __va_arg_gp@PLT
 	pop %rdi
 	jmp .L21
 	.L20:
@@ -640,7 +640,7 @@ test_int:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_fp
+	call __va_arg_fp@PLT
 	pop %rdi
 	jmp .L23
 	.L22:
@@ -652,7 +652,7 @@ test_int:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_mem
+	call __va_arg_mem@PLT
 	pop %rdi
 	.L23:
 	.L21:
@@ -663,7 +663,7 @@ test_int:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -742,7 +742,7 @@ test_float:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -797,7 +797,7 @@ test_float:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_gp
+	call __va_arg_gp@PLT
 	pop %rdi
 	jmp .L29
 	.L28:
@@ -822,7 +822,7 @@ test_float:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_fp
+	call __va_arg_fp@PLT
 	pop %rdi
 	jmp .L31
 	.L30:
@@ -834,7 +834,7 @@ test_float:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_mem
+	call __va_arg_mem@PLT
 	pop %rdi
 	.L31:
 	.L29:
@@ -847,7 +847,7 @@ test_float:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -902,7 +902,7 @@ test_float:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_gp
+	call __va_arg_gp@PLT
 	pop %rdi
 	jmp .L35
 	.L34:
@@ -927,7 +927,7 @@ test_float:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_fp
+	call __va_arg_fp@PLT
 	pop %rdi
 	jmp .L37
 	.L36:
@@ -939,7 +939,7 @@ test_float:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_mem
+	call __va_arg_mem@PLT
 	pop %rdi
 	.L37:
 	.L35:
@@ -952,7 +952,7 @@ test_float:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -1007,7 +1007,7 @@ test_float:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_gp
+	call __va_arg_gp@PLT
 	pop %rdi
 	jmp .L41
 	.L40:
@@ -1032,7 +1032,7 @@ test_float:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_fp
+	call __va_arg_fp@PLT
 	pop %rdi
 	jmp .L43
 	.L42:
@@ -1044,7 +1044,7 @@ test_float:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_mem
+	call __va_arg_mem@PLT
 	pop %rdi
 	.L43:
 	.L41:
@@ -1057,7 +1057,7 @@ test_float:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -1130,7 +1130,7 @@ test_mix:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1186,7 +1186,7 @@ test_mix:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_gp
+	call __va_arg_gp@PLT
 	pop %rdi
 	jmp .L49
 	.L48:
@@ -1211,7 +1211,7 @@ test_mix:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_fp
+	call __va_arg_fp@PLT
 	pop %rdi
 	jmp .L51
 	.L50:
@@ -1223,7 +1223,7 @@ test_mix:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_mem
+	call __va_arg_mem@PLT
 	pop %rdi
 	.L51:
 	.L49:
@@ -1236,7 +1236,7 @@ test_mix:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectd
+	call fexpectd@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -1287,7 +1287,7 @@ test_mix:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_gp
+	call __va_arg_gp@PLT
 	pop %rdi
 	jmp .L54
 	.L53:
@@ -1312,7 +1312,7 @@ test_mix:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_fp
+	call __va_arg_fp@PLT
 	pop %rdi
 	jmp .L56
 	.L55:
@@ -1324,7 +1324,7 @@ test_mix:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_mem
+	call __va_arg_mem@PLT
 	pop %rdi
 	.L56:
 	.L54:
@@ -1335,7 +1335,7 @@ test_mix:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1389,7 +1389,7 @@ test_mix:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_gp
+	call __va_arg_gp@PLT
 	pop %rdi
 	jmp .L60
 	.L59:
@@ -1414,7 +1414,7 @@ test_mix:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_fp
+	call __va_arg_fp@PLT
 	pop %rdi
 	jmp .L62
 	.L61:
@@ -1426,7 +1426,7 @@ test_mix:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_mem
+	call __va_arg_mem@PLT
 	pop %rdi
 	.L62:
 	.L60:
@@ -1436,7 +1436,7 @@ test_mix:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1486,7 +1486,7 @@ test_mix:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_gp
+	call __va_arg_gp@PLT
 	pop %rdi
 	jmp .L65
 	.L64:
@@ -1511,7 +1511,7 @@ test_mix:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_fp
+	call __va_arg_fp@PLT
 	pop %rdi
 	jmp .L67
 	.L66:
@@ -1523,7 +1523,7 @@ test_mix:
 	lea -208(%rbp), %rax
 	push %rax
 	pop %rdi
-	call __va_arg_mem
+	call __va_arg_mem@PLT
 	pop %rdi
 	.L67:
 	.L65:
@@ -1534,7 +1534,7 @@ test_mix:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1607,7 +1607,7 @@ fmt:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call vsprintf
+	call vsprintf@PLT
 	add $8, %rsp
 	pop %rdx
 	pop %rsi
@@ -1660,14 +1660,14 @@ test_va_list:
 	push %rax
 	pop %rdi
 	mov $0, %eax
-	call fmt
+	call fmt@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1704,7 +1704,7 @@ test_va_list:
 	pop %rsi
 	pop %rdi
 	mov $0, %eax
-	call fmt
+	call fmt@PLT
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
@@ -1713,7 +1713,7 @@ test_va_list:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1781,7 +1781,7 @@ test_va_list:
 	pop %rsi
 	pop %rdi
 	mov $2, %eax
-	call fmt
+	call fmt@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rcx
@@ -1793,7 +1793,7 @@ test_va_list:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1819,12 +1819,12 @@ testmain:
 	lea .L80(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 2 63 0
 	#     test_int(1, 2, 3, 5, 8);
-	call test_builtin
+	call test_builtin@PLT
 	.loc 2 64 0
 	#     test_float(1.0, 2.0, 4.0, 8.0);
 	push %rdi
@@ -1849,7 +1849,7 @@ testmain:
 	pop %rsi
 	pop %rdi
 	mov $0, %eax
-	call test_int
+	call test_int@PLT
 	add $8, %rsp
 	pop %r8
 	pop %rcx
@@ -1903,7 +1903,7 @@ testmain:
 	movsd (%rsp), %xmm0
 	add $8, %rsp
 	mov $4, %eax
-	call test_float
+	call test_float@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm3
 	add $8, %rsp
@@ -1947,13 +1947,13 @@ testmain:
 	pop %rsi
 	pop %rdi
 	mov $1, %eax
-	call test_mix
+	call test_mix@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
 	.loc 2 67 0
 	# }
-	call test_va_list
+	call test_va_list@PLT
 	leave
 	ret

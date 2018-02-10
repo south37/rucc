@@ -429,7 +429,7 @@ get_timestamp:
 	push %rax
 	pop %rsi
 	pop %rdi
-	call stat
+	call stat@PLT
 	pop %rsi
 	pop %rdi
 	.loc 4 15 0
@@ -446,7 +446,7 @@ get_timestamp:
 	push %rax
 	pop %rsi
 	pop %rdi
-	call setlocale
+	call setlocale@PLT
 	pop %rsi
 	pop %rdi
 	.loc 4 16 0
@@ -476,14 +476,14 @@ get_timestamp:
 	add $0, %rax
 	push %rax
 	pop %rdi
-	call localtime
+	call localtime@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call strftime
+	call strftime@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -535,7 +535,7 @@ special:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -562,7 +562,7 @@ special:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -589,14 +589,14 @@ special:
 	lea .L8(%rip), %rax
 	push %rax
 	pop %rdi
-	call strlen
+	call strlen@PLT
 	pop %rdi
 	push %rax
 	pop %rcx
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -621,7 +621,7 @@ special:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -656,7 +656,7 @@ special:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -700,7 +700,7 @@ include:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -733,7 +733,7 @@ include:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -769,7 +769,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -794,7 +794,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -819,7 +819,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -844,7 +844,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -869,7 +869,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -894,7 +894,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -919,7 +919,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -944,7 +944,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -969,7 +969,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -994,7 +994,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1019,7 +1019,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1044,7 +1044,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1069,7 +1069,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1094,7 +1094,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1119,7 +1119,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1144,7 +1144,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1169,7 +1169,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1194,7 +1194,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1219,7 +1219,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1244,7 +1244,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1269,7 +1269,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1294,7 +1294,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1319,7 +1319,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1344,7 +1344,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1369,7 +1369,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1394,7 +1394,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1419,7 +1419,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1444,7 +1444,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1469,7 +1469,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1494,7 +1494,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1519,7 +1519,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1544,7 +1544,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1569,7 +1569,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1594,7 +1594,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1619,7 +1619,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1644,7 +1644,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1669,7 +1669,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1694,7 +1694,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1719,7 +1719,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1744,7 +1744,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1769,7 +1769,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1794,7 +1794,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1819,7 +1819,7 @@ predefined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1855,7 +1855,7 @@ simple:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1885,7 +1885,7 @@ simple:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1930,7 +1930,7 @@ loop:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -1959,7 +1959,7 @@ loop:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -2000,7 +2000,7 @@ undef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2029,7 +2029,7 @@ undef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2058,7 +2058,7 @@ undef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2102,7 +2102,7 @@ cond_incl:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2140,7 +2140,7 @@ cond_incl:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2176,7 +2176,7 @@ cond_incl:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2212,7 +2212,7 @@ cond_incl:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2248,7 +2248,7 @@ cond_incl:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2284,7 +2284,7 @@ cond_incl:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2320,7 +2320,7 @@ cond_incl:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2356,7 +2356,7 @@ cond_incl:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2405,7 +2405,7 @@ const_expr:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2441,7 +2441,7 @@ const_expr:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2477,7 +2477,7 @@ const_expr:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2513,7 +2513,7 @@ const_expr:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2549,7 +2549,7 @@ const_expr:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2585,7 +2585,7 @@ const_expr:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2621,7 +2621,7 @@ const_expr:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2657,7 +2657,7 @@ const_expr:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2693,7 +2693,7 @@ const_expr:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2729,7 +2729,7 @@ const_expr:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2765,7 +2765,7 @@ const_expr:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2801,7 +2801,7 @@ const_expr:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2850,7 +2850,7 @@ defined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2886,7 +2886,7 @@ defined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2922,7 +2922,7 @@ defined:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -2973,7 +2973,7 @@ ifdef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -3011,7 +3011,7 @@ ifdef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -3049,7 +3049,7 @@ ifdef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -3087,7 +3087,7 @@ ifdef:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -3179,7 +3179,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3212,7 +3212,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3245,7 +3245,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3278,7 +3278,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3311,7 +3311,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3344,7 +3344,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3377,7 +3377,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3410,7 +3410,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3443,7 +3443,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3476,7 +3476,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3509,7 +3509,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3542,7 +3542,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3575,7 +3575,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3608,7 +3608,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3641,7 +3641,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3674,7 +3674,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3707,7 +3707,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3740,7 +3740,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3773,7 +3773,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3800,7 +3800,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3830,7 +3830,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3858,7 +3858,7 @@ funclike:
 	push %rax
 	pop %rsi
 	pop %rdi
-	call plus
+	call plus@PLT
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
@@ -3867,7 +3867,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3892,7 +3892,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3927,7 +3927,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3957,7 +3957,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -3987,7 +3987,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4027,7 +4027,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4067,7 +4067,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4097,7 +4097,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4130,7 +4130,7 @@ funclike:
 	push %rax
 	pop %rsi
 	pop %rdi
-	call plus
+	call plus@PLT
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
@@ -4139,7 +4139,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4173,7 +4173,7 @@ funclike:
 	push %rax
 	pop %rsi
 	pop %rdi
-	call plus
+	call plus@PLT
 	pop %rsi
 	pop %rdi
 	mov %rax, %rcx
@@ -4184,7 +4184,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4212,7 +4212,7 @@ funclike:
 	push %rax
 	pop %rsi
 	pop %rdi
-	call plus
+	call plus@PLT
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
@@ -4221,7 +4221,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4249,7 +4249,7 @@ funclike:
 	push %rax
 	pop %rsi
 	pop %rdi
-	call minus
+	call minus@PLT
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
@@ -4258,7 +4258,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4288,7 +4288,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4318,7 +4318,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4343,7 +4343,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4373,7 +4373,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4415,7 +4415,7 @@ funclike:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	add $8, %rsp
 	movsd (%rsp), %xmm1
 	add $8, %rsp
@@ -4443,7 +4443,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4468,7 +4468,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4494,7 +4494,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4529,7 +4529,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4562,7 +4562,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4595,7 +4595,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4628,7 +4628,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4660,7 +4660,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4695,7 +4695,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4728,7 +4728,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4760,7 +4760,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4789,7 +4789,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4830,7 +4830,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4865,7 +4865,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4898,7 +4898,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4931,7 +4931,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4964,7 +4964,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -4997,7 +4997,7 @@ funclike:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5033,7 +5033,7 @@ empty:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5058,7 +5058,7 @@ empty:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5083,7 +5083,7 @@ empty:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5108,7 +5108,7 @@ empty:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5144,7 +5144,7 @@ noarg:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5189,7 +5189,7 @@ counter:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5214,7 +5214,7 @@ counter:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5239,7 +5239,7 @@ counter:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5283,7 +5283,7 @@ gnuext:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5316,7 +5316,7 @@ gnuext:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5349,7 +5349,7 @@ gnuext:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5382,7 +5382,7 @@ gnuext:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5415,7 +5415,7 @@ gnuext:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect_string
+	call fexpect_string@PLT
 	pop %rcx
 	pop %rdx
 	pop %rsi
@@ -5441,56 +5441,56 @@ testmain:
 	lea .L237(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	add $8, %rsp
 	pop %rdi
 	.loc 4 496 0
 	#     include();
-	call special
+	call special@PLT
 	.loc 4 497 0
 	#     predefined();
-	call include
+	call include@PLT
 	.loc 4 498 0
 	#     simple();
-	call predefined
+	call predefined@PLT
 	.loc 4 499 0
 	#     loop();
-	call simple
+	call simple@PLT
 	.loc 4 500 0
 	#     undef();
-	call loop
+	call loop@PLT
 	.loc 4 501 0
 	#     cond_incl();
-	call undef
+	call undef@PLT
 	.loc 4 502 0
 	#     const_expr();
-	call cond_incl
+	call cond_incl@PLT
 	.loc 4 503 0
 	#     defined();
-	call const_expr
+	call const_expr@PLT
 	.loc 4 504 0
 	#     ifdef();
-	call defined
+	call defined@PLT
 	.loc 4 505 0
 	#     funclike();
-	call ifdef
+	call ifdef@PLT
 	.loc 4 506 0
 	#     empty();
-	call funclike
+	call funclike@PLT
 	.loc 4 507 0
 	#     noarg();
-	call empty
+	call empty@PLT
 	.loc 4 508 0
 	#     null();
-	call noarg
+	call noarg@PLT
 	.loc 4 509 0
 	#     counter();
-	call null
+	call null@PLT
 	.loc 4 510 0
 	#     gnuext();
-	call counter
+	call counter@PLT
 	.loc 4 511 0
 	# }
-	call gnuext
+	call gnuext@PLT
 	leave
 	ret

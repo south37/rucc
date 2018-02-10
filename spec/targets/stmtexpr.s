@@ -142,7 +142,7 @@ testmain:
 	lea .L0(%rip), %rax
 	push %rax
 	pop %rdi
-	call print
+	call print@PLT
 	pop %rdi
 	.loc 2 8 0
 	#     expectf(3.0, ({ 1; 2; 3.0; }));
@@ -174,7 +174,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
@@ -222,7 +222,7 @@ testmain:
 	add $8, %rsp
 	pop %rsi
 	pop %rdi
-	call fexpectf
+	call fexpectf@PLT
 	movsd (%rsp), %xmm1
 	add $8, %rsp
 	pop %rsi
@@ -255,7 +255,7 @@ testmain:
 	pop %rdx
 	pop %rsi
 	pop %rdi
-	call fexpect
+	call fexpect@PLT
 	add $8, %rsp
 	pop %rcx
 	pop %rdx
