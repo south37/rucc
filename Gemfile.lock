@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rucc (0.1.0)
+    rucc (0.1.1)
 
 GEM
   remote: https://rubygems.org/
